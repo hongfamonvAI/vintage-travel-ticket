@@ -1,0 +1,24 @@
+# Reference Ticket Archetypes
+
+Choose exactly one archetype for each first-pass ticket. These synthesize recurring families in the source reference corpus; they are not individual tickets to trace. Do not repeat the immediately previous archetype.
+
+| Archetype | Format and layout | Illustration language | Paper, palette, and age | Type character and ticket grammar |
+|---|---|---|---|---|
+| A — public-park panorama | wide `3.5:1`–`4.5:1`; long scene with a tiny end stub or price corner | airy line engraving, calm water/architecture silhouettes | off-white or cream; jade + cinnabar; faded hairlines and soft edge wear | modest Song/Ming heading, small price and serial; no mandatory stub |
+| B — state-run colour block | compact horizontal `2.5:1`–`3.2:1`; broad coloured band with a small scenic insert | flat two- or three-ink screenprint, large geometric icons | white, pale jade, or saturated green/blue stock; bright red/green/blue, dry broad solids | heavy black display title, condensed labels, one price or value mark |
+| C — folk-story picture ticket | horizontal `2.5:1`–`3.5:1`; scene and a portrait/animal/folk emblem share the composition | naïve souvenir illustration, decorative outlines, playful shapes | pale cream, pink, or aqua; lively red/blue/green; uneven colour registration | hand-painted or brush display title, small printed ticket type, occasional `副券` |
+| D — modern recreation graphic | wide `3:1`–`4:1`; high-contrast title band, emblematic subject, dynamic rules | 1970s–1980s graphic illustration, simplified bold contour, cyan/orange/blue masses | clean white or cool gray-white; bright cyan, orange, royal blue; light abrasion and sun fade | rounded or squared bold display, compact sans labels, mechanical serial |
+| E — route-map admission | horizontal `2.5:1`–`3.5:1`; map, route, gate/arrow, and small architectural motifs | cartographic line graphic, schematic symbols | pale cream/green/red stock; 2–3 inks; folds, stamp ghost, rubbed corners | compact print title, route/entry labels, code and small directional text; no picture-postcard scene |
+| F — woodcut exhibition pass | horizontal `2.5:1`–`3.2:1`; strong scenic or object silhouette with a title rail | dense monochrome or duotone woodcut, broad cut-ink shadows | white, buff, or dark card; black-brown + one accent; dry ink, pinholes, worn blocks | tall condensed display, carved-looking title, faint stamped serial |
+| G — decorative coupon pair | horizontal `2.8:1`–`3.5:1`; two unequal detachable halves with a clear perforation | contour illustration, ornamental border, small vignette | cream, pink, or pale blue; plum/ochre/green; rubbed fold and edge abrasion | `正券` + `副券` or `存根`, price, serial, one short validity line |
+| H — landscape bookmark | vertical `1:2.5`–`1:3.7`; narrow scenic column with title/serial stacked along its length | elegant ink drawing, tall scene, ornamental border | white, pale jade, blue, or black card; limited inks; edge fading and dry title strokes | vertical Fangsong, calligraphy, or fine Song/Ming; compact small fields |
+| I — vertical souvenir card | vertical `1:1.7`–`1:2.2`; image-card or coloured panel with small ticket base | stylized decorative illustration, figures/objects only when implied by the location | bright colour card or cool white; crisp print with modest wear | expressive title or block lettering; tiny caption, price, or serial at base |
+| J — black-gold ink slip | narrow vertical `1:2.5`–`1:3.5` or compact horizontal `3:1`; large negative space and one framed motif | black-ink or gold-line scenic calligraphy/ornament | charcoal, dark blue, or warm white card; rubbed metallic/ink edges, sparse speckle | calligraphic main title, minimal small print, seal and value mark; never a conventional busy ticket |
+
+## Selection rules
+
+- The archetype controls the ratio, page geometry, type hierarchy, field density, and rendering method. Do not borrow only its palette while retaining another archetype's default layout.
+- Use a source photo only to determine the place-specific motifs. A temple may become a flat icon, a paper-cut silhouette, a map marker, a naïve postcard scene, or a black-and-gold ink motif depending on the chosen archetype.
+- Select 0–5 metadata fields appropriate to the archetype and the chosen information grammar. For example, G needs coupon fields; E can use entry/route labels; A or I may use only a serial/seal or only a title and pinyin; J may have only a seal and value mark. A category phrase such as `游览券` or `纪念券` is optional, never filler.
+- Change orientation when the selected archetype is vertical. Do not preserve the source photo's orientation automatically.
+- Keep every chosen title, ticket type, pinyin, number, and detail word accurate. Do not add a category phrase merely because a small field is empty, and do not add a historical body, real issuer, or official price without a source.

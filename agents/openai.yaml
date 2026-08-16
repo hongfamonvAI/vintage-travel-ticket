@@ -1,0 +1,4 @@
+interface:
+  display_name: "老式记忆门票"
+  short_description: "把风景、街巷或美食照片制成手绘复古票券"
+  default_prompt: "Use $vintage-travel-ticket to turn my travel, city, or food photo into a vintage Chinese ticket."
