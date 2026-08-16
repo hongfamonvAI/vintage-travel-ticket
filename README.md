@@ -9,7 +9,7 @@
 将此仓库放入 Codex 的 skills 目录，例如：
 
 ```bash
-git clone https://github.com/<your-github-username>/vintage-travel-ticket.git \
+git clone https://github.com/hongfamonvAI/vintage-travel-ticket.git \
   ~/.codex/skills/vintage-travel-ticket
 ```
 
