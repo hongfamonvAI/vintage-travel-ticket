@@ -1,60 +1,59 @@
-# Old Chinese Travel Ticket Style System
+# Old Chinese Ticket Style System
 
-Derived from a private 66-image reference library. This public document preserves its style grammar, not its images or a copy bank.
+This is the compact visual specification. It is derived from an anonymous 66-ticket design index and does not require the private images at generation time.
 
-## Format and structure
+Read [design-grammar.md](design-grammar.md) first. Then use [archetype-system.md](archetype-system.md), [palette-paper-system.md](palette-paper-system.md), [illustration-system.md](illustration-system.md), [typography-system.md](typography-system.md), and [print-ageing-system.md](print-ageing-system.md) as the compatible design axes. Consult [corpus-design-index.md](corpus-design-index.md) only when diagnosing repetition or needing a less common structural precedent.
 
-- The collection contains 37 horizontal and 29 vertical tickets. On every first pass, let the selected reference-derived archetype choose the format: wide horizontal, compact horizontal, narrow vertical, or tall vertical. When a user explicitly asks for a vertical ticket without further direction, use a long strip rather than a poster: the sampled vertical references range from about `1:1.7` to `1:3.7`, with the characteristic narrow ticket forms concentrated around `1:2.5`–`1:3.7`; default to `1:3`. A shorter `1:1.7`–`1:2.2` vertical souvenir card remains a valid random first-pass archetype.
-- Compose a main scenic panel with one smaller administrative zone: a stub, serial block, price block, vertical title rail, or seal block.
-- Use fine rectangular frames, divider rules, narrow gutters, and occasional perforated/deckled ticket edges.
-- Maintain generous aged-paper negative space. Never fill the full ticket with illustration.
+## Corpus proportions
 
-## Image language
+- 66 valid source tickets: 37 horizontal, 29 vertical.
+- Common horizontal ratios: `2.4:1`–`3.1:1`; compact cards can be near `2:1`; rare friezes reach `4.7:1`.
+- Vertical tickets split between souvenir cards (`1:1.7`–`1:2.2`) and long strips (`1:2.4`–`1:3.7`).
+- A user-requested vertical ticket defaults to `1:3`, not `3:5`.
+- A user-requested horizontal ticket is a full redesign, not a crop of a vertical ticket.
 
-- Treat the supplied subject as a small printed illustration, not a photo: contour-based mountains, temples, bridges, waterfalls, rivers, gardens, animals, museum objects, regional motifs, or—when the subject is food—a dish, cooking vessel, ingredients, and dining motifs.
-- Favor simplified blocks, line engraving, flat color silhouettes, and low-detail trees/clouds/water.
-- Use two to four muted spot inks on cream paper. Common moods: green plus red, blue plus red, ochre plus green, dark brown plus a pale accent.
-- Age the ink as well as the substrate: use irregular pinhole dropouts, occasional missing line segments, a faint offset color pass, softened border corners, and faded title/serial areas. Keep each imperfection tied to an inked region; a beige background plus pristine drawing is insufficient.
-- Recompose source scenes into a few graphic masses rather than preserving camera framing. A photograph may supply recognisable anchors, but foliage, rocks, water, buildings, and animals must be editorially simplified and rearranged as printed illustration.
-- Avoid glossy, digital, or heavily damaged treatments.
+## Design constants
 
-## Variation recipes
+- Build one physical ticket with a scene/image zone and zero or one administrative zone. The administrative zone can be a stub, value corner, seal block, serial third, footer band, side rail, title cap, route index, or absent.
+- Preserve meaningful paper. Formal and scenic families usually leave 20–45% of the ticket unprinted; high-chroma families may use solid fields.
+- Use two to four spot inks. Paper is an active colour.
+- Draw rules with purpose: division, inspection, value, serial, perforation, or frame. Do not decorate every empty area with boxes.
+- Let typography sometimes dominate. The corpus includes tickets where calligraphy, a vertical title, a band headline, or a seal cartouche carries more weight than the picture.
 
-Choose one entry from each column for every new ticket. These recipes synthesize patterns found across the reference corpus; never copy a single source ticket.
+## Source transformation
 
-| Palette recipe | Layout family | Illustration treatment | Ageing profile |
-|---|---|---|---|
-| jade green + cinnabar + cream | panoramic scene with a narrow end stub | airy line engraving with broad pale negative space | faded vertical band and broken corner rules |
-| cobalt blue + vermilion + cream | central framed vignette with a left-side serial block | dense single-color woodcut silhouette | uneven blue ink coverage and offset red stamp |
-| olive green + mustard ochre + brick red + cream | title banner over a low scenic strip | block-print landscape with simplified graphic clouds | dry ink along broad solid blocks and creased tear line |
-| plum violet + ochre + black-brown + cream | two detachable horizontal compartments | decorative contour illustration with ornamental borders | rubbed title strokes and light stamp ghosting |
-| brick red + muted turquoise + dark green + cream | tall central title rail within the horizontal ticket | sparse duotone illustration with a bold emblem | faded red linework and perforation-edge abrasion |
-| black-brown + pale moss + red seal + cream | asymmetrical ticket-map composition with a small seal panel | cartographic or schematic scenic drawing | aged monochrome ink, pinhole dropouts, and softened edges |
+- Treat the uploaded photo as semantic evidence only. Retain two to four recognition anchors and rebuild the scene inside the selected archetype.
+- Simplify foliage, crowds, stones, food texture, signs, and architectural repetition into large printed masses.
+- Change crop, viewpoint, spatial depth, and object scale when needed. A source-aligned tracing fails even when it has an old-paper filter.
+- Keep a person recognisable through hair, clothing silhouette, pose, and one accessory, but translate them through the selected illustration language.
+- Make food a ticket subject through vessel, ingredients, cutaway, specimen label, or dining vignette—not product packaging.
 
-### Selection rules
+## Information density
 
-- Let the place type influence the choice only when necessary for legibility; never default forests to green recipes, water to blue recipes, or mountains to brown recipes.
-- Fit all scene types into any recipe by using the selected inks symbolically. For example, a forest may be cobalt linework, a river may be ochre negative space, and a temple may be vermilion silhouette.
-- Make the selected layout visibly decisive. Change the title position, stub orientation, scenic-panel geometry, and information-zone hierarchy together rather than merely swapping colors.
-- If a new ticket follows a visible prior ticket, choose a different palette recipe and at least one different layout or illustration treatment.
+Choose zero to five secondary fields. Plausible fields include serial, value, price, pinyin/Romanization, check mark, gate, route, issue strip, seal, coupon label, holder, or user-supplied date.
 
+- `副券`, `存根`, and `正券` appear only in a true detachable or register structure.
+- A generic category phrase is never filler. `城市漫游券`, `纪念券`, `食味券`, and similar labels are optional.
+- Never fabricate an official issuer, historical price, official seal, or date.
+- An invented decorative value may be typographically plausible only when it is clearly non-factual; do not present it as an official current price.
+- Preserve user names exactly and normalize unambiguous dates to `YYYY.MM.DD`.
 
-## Text grammar
+## Authentic oldness
 
-- Main fields may contain only a destination/attraction name, pinyin, a seal, serial, value box, route mark, or personal field. Category phrases such as `参观券`, `游览券`, `纪念券`, `副券`, `存根`—and food phrases such as `食味券`, `品鉴券`, `尝鲜券`, `餐叙券`, `风味纪念券`—are optional structural devices, never default filler.
-- Place the verified destination or dish name as the visual title, horizontally or vertically depending on the composition.
-- Support small supplementary lines: pinyin, Roman letters, ticket number, `NO.`, a simple value mark, a small seal, or issuing line.
-- Select title, information, and serial/pinyin treatments from [typography-system.md](typography-system.md). The library demonstrates a family of distinct eras and print methods—not one universal old-ticket font.
-- Use compact Chinese type, display calligraphy only for the main title, and old print-style vertical type where useful. Keep all generated words newly authored and accurate.
+- Age paper and ink together. Use two plausible events from [print-ageing-system.md](print-ageing-system.md).
+- White and saturated tickets may look old through ink loss, fold dirt, stamp ghosts, torn perforations, and sun fade; they do not need beige paper.
+- Keep wear local and directional. A uniform grunge overlay, dark vignette, or kraft-paper cast is not enough.
 
-## Composition variations
+## Anti-collapse checks
 
-- Wide panorama with an end stub and serial number.
-- Central framed vignette with a tall vertical title rail.
-- Single-color scenic silhouette with a bold title band.
-- Two-panel ticket with a detachable `副券`/`存根` section.
-- Tall scenic columns and vertical souvenir cards are valid first-pass formats when selected as the archetype; do not preserve the source photo's aspect ratio automatically.
+Reject and rebuild when any two of these are true:
 
-## Non-copy rule
+- centred horizontal Song headline repeats the prior ticket;
+- right-side stub repeats without structural reason;
+- cream paper and green/red palette repeat by habit;
+- illustration is a clean near-1:1 tracing of the photo;
+- all information uses one type family;
+- “纪念券” or another category phrase appears only to fill space;
+- ageing affects the paper but not the printed content;
+- the result reads as a poster, postcard, product label, or menu instead of a ticket.
 
-Do not reproduce a specific reference ticket's title, logo, unique landmark drawing, layout, serial number, stamp, or illustrated character. Combine general structural cues into a new design that serves the uploaded destination.

@@ -1,24 +1,50 @@
-# Reference Ticket Archetypes
+# Reference-Distilled Ticket Archetypes
 
-Choose exactly one archetype for each first-pass ticket. These synthesize recurring families in the source reference corpus; they are not individual tickets to trace. Do not repeat the immediately previous archetype.
+Choose exactly one archetype before every first-pass generation. These sixteen families were distilled from the 66-ticket corpus. They define a whole system—ratio, spatial allocation, illustration, text hierarchy, information grammar, and print era—not merely a palette.
 
-| Archetype | Format and layout | Illustration language | Paper, palette, and age | Type character and ticket grammar |
-|---|---|---|---|---|
-| A — public-park panorama | wide `3.5:1`–`4.5:1`; long scene with a tiny end stub or price corner | airy line engraving, calm water/architecture silhouettes | off-white or cream; jade + cinnabar; faded hairlines and soft edge wear | modest Song/Ming heading, small price and serial; no mandatory stub |
-| B — state-run colour block | compact horizontal `2.5:1`–`3.2:1`; broad coloured band with a small scenic insert | flat two- or three-ink screenprint, large geometric icons | white, pale jade, or saturated green/blue stock; bright red/green/blue, dry broad solids | heavy black display title, condensed labels, one price or value mark |
-| C — folk-story picture ticket | horizontal `2.5:1`–`3.5:1`; scene and a portrait/animal/folk emblem share the composition | naïve souvenir illustration, decorative outlines, playful shapes | pale cream, pink, or aqua; lively red/blue/green; uneven colour registration | hand-painted or brush display title, small printed ticket type, occasional `副券` |
-| D — modern recreation graphic | wide `3:1`–`4:1`; high-contrast title band, emblematic subject, dynamic rules | 1970s–1980s graphic illustration, simplified bold contour, cyan/orange/blue masses | clean white or cool gray-white; bright cyan, orange, royal blue; light abrasion and sun fade | rounded or squared bold display, compact sans labels, mechanical serial |
-| E — route-map admission | horizontal `2.5:1`–`3.5:1`; map, route, gate/arrow, and small architectural motifs | cartographic line graphic, schematic symbols | pale cream/green/red stock; 2–3 inks; folds, stamp ghost, rubbed corners | compact print title, route/entry labels, code and small directional text; no picture-postcard scene |
-| F — woodcut exhibition pass | horizontal `2.5:1`–`3.2:1`; strong scenic or object silhouette with a title rail | dense monochrome or duotone woodcut, broad cut-ink shadows | white, buff, or dark card; black-brown + one accent; dry ink, pinholes, worn blocks | tall condensed display, carved-looking title, faint stamped serial |
-| G — decorative coupon pair | horizontal `2.8:1`–`3.5:1`; two unequal detachable halves with a clear perforation | contour illustration, ornamental border, small vignette | cream, pink, or pale blue; plum/ochre/green; rubbed fold and edge abrasion | `正券` + `副券` or `存根`, price, serial, one short validity line |
-| H — landscape bookmark | vertical `1:2.5`–`1:3.7`; narrow scenic column with title/serial stacked along its length | elegant ink drawing, tall scene, ornamental border | white, pale jade, blue, or black card; limited inks; edge fading and dry title strokes | vertical Fangsong, calligraphy, or fine Song/Ming; compact small fields |
-| I — vertical souvenir card | vertical `1:1.7`–`1:2.2`; image-card or coloured panel with small ticket base | stylized decorative illustration, figures/objects only when implied by the location | bright colour card or cool white; crisp print with modest wear | expressive title or block lettering; tiny caption, price, or serial at base |
-| J — black-gold ink slip | narrow vertical `1:2.5`–`1:3.5` or compact horizontal `3:1`; large negative space and one framed motif | black-ink or gold-line scenic calligraphy/ornament | charcoal, dark blue, or warm white card; rubbed metallic/ink edges, sparse speckle | calligraphic main title, minimal small print, seal and value mark; never a conventional busy ticket |
+## Horizontal families
 
-## Selection rules
+| ID | Archetype | Ratio | Spatial allocation | Compatible image/type/grammar |
+|---|---|---:|---|---|
+| A | editorial serial ticket | `2.8:1`–`3.3:1` | 12–20% serial cell, 65–78% editorial image/title, 8–15% narrow rail | caricature, stencil or calligraphic display; `title-token`, `memory-field`, `value-block` |
+| B | institutional band banner | `2.5:1`–`3.2:1` | three stacked bands; emblem corners; title centred in dominant field | flat screenprint, knockout type, geometric Romanization; `functional-label` or `title-token` |
+| C | folk scenic stub | `2.4:1`–`3.3:1` | 18–28% side stub plus one framed or open scenic panel | naïve colour or loose contour; hand title + small lead type; `coupon-pair`, `value-block`, `memory-field` |
+| D | specimen/educational ticket | `2.8:1`–`3.5:1` | small stub, isolated specimen window, label rails | scientific engraving or cartoon emblem; condensed labels + italic Latin; `scientific-label`, `value-block` |
+| E | formal coupon pair | `2.2:1`–`2.8:1` | two unequal halves with clear perforation and quiet framed image | monochrome engraving; Song/Fangsong + mechanical number; `coupon-pair` only |
+| F | framed panorama | `2.4:1`–`3.2:1` | 65–85% panorama; remaining space becomes admin box, title rail, price corner, or nothing | engraving, folk colour, woodcut, painterly insert; any non-route grammar |
+| G | map or modular grid | `2.0:1`–`2.7:1` | full map or two-to-four unequal image cells with index/admin rail | schema, woodcut modules, reversed band title; `route-code`, `value-block`, `issuer-strip` |
+| H | high-chroma recreation graphic | `2.1:1`–`3.1:1` | dynamic title/image overlap, broad colour field, optional thin terminal | recreation graphic or cartoon; outlined/sign-painted title; `title-token`, `functional-label`, `memory-field` |
+| I | transport fare ticket | `2.1:1`–`2.9:1` | vehicle/vessel image plus 20–35% fare, price, or serial zone | engraving or screenprint; brush/block title + mechanical fare; `transport-fare` |
+| J | calligraphic field | `2.4:1`–`3.0:1` | 50–75% typography field, one small dark vignette, optional Roman footer | brush calligraphy + sparse engraving; `title-token` or `memory-field` |
+| K | banknote and seal slip | `2.3:1`–`2.8:1` | guilloche ground, seal cartouche, small scenic or object insert | engraving/halftone, seal-script display, stamped value; `value-block`, `issuer-strip` |
+| L | minimal emblem panorama | `2.5:1`–`3.1:1` | one fine frame, one low panorama or symmetric emblem, large open title zone | clean screenprint/engraving, geometric vertical or spaced title; `title-token` |
 
-- The archetype controls the ratio, page geometry, type hierarchy, field density, and rendering method. Do not borrow only its palette while retaining another archetype's default layout.
-- Use a source photo only to determine the place-specific motifs. A temple may become a flat icon, a paper-cut silhouette, a map marker, a naïve postcard scene, or a black-and-gold ink motif depending on the chosen archetype.
-- Select 0–5 metadata fields appropriate to the archetype and the chosen information grammar. For example, G needs coupon fields; E can use entry/route labels; A or I may use only a serial/seal or only a title and pinyin; J may have only a seal and value mark. A category phrase such as `游览券` or `纪念券` is optional, never filler.
-- Change orientation when the selected archetype is vertical. Do not preserve the source photo's orientation automatically.
-- Keep every chosen title, ticket type, pinyin, number, and detail word accurate. Do not add a category phrase merely because a small field is empty, and do not add a historical body, real issuer, or official price without a source.
+## Vertical families
+
+| ID | Archetype | Ratio | Spatial allocation | Compatible image/type/grammar |
+|---|---|---:|---|---|
+| M | scenic bookmark | `1:2.5`–`1:3.7` | 60–80% tall scenic column, title on edge or base, compact value/serial foot | engraving, woodcut, painterly/halftone insert; vertical title; `value-block`, `functional-label`, `title-token` |
+| N | souvenir card | `1:1.7`–`1:2.2` | framed image or decorative panel, small caption/price base | folk colour, portrait medallion, ornament, cartoon; expressive title; `memory-field`, `title-token` |
+| O | dark decorative pass | `1:1.7`–`1:3.3` | saturated dark field, one knockout figure/motif, small header/footer | cut-paper, ornamental collage, woodcut; seal/calligraphy/art-deco Roman; `title-token`, `value-block` |
+| P | vertical administrative register | `1:2.6`–`1:3.7` | repeated serial/title cells, stacked vignettes, or striped lower coupon | fine engraving or institutional screenprint; condensed vertical type + mono number; `coupon-pair`, `issuer-strip`, `route-code` |
+
+## Selection weights
+
+When orientation is not specified, use the corpus-level `56% horizontal / 44% vertical` split. Within an orientation, do not weight every family equally:
+
+- frequent: `C`, `F`, `M`, `P`;
+- medium: `B`, `G`, `H`, `I`, `N`, `L`;
+- occasional: `A`, `D`, `E`, `J`, `K`, `O`.
+
+Occasional families remain essential. Ensure at least one in every four successive outputs uses a medium or occasional family when enough conversation history is visible.
+
+## Structural rules
+
+- The archetype controls where the scene, title, ticket information, empty paper, and wear live. Do not keep the same top headline and right stub after switching archetypes.
+- A stub appears only in `C`, `D`, `E`, `I`, or `P`, and even there it is not mandatory unless the grammar is `coupon-pair`.
+- `J` and `L` deliberately allow almost no ticket-type phrase. Empty paper is part of the composition.
+- An explicitly requested vertical ticket defaults to `M` or `P` at about `1:3`; never use a poster-like `3:5` ratio.
+- An explicitly requested horizontal ticket must be redrawn around `A`–`L`; never crop a vertical card.
+- Very long horizontal output above `4:1` is allowed only as a rare frieze variant of `F`, `I`, or `L`.
+- Keep user-supplied name/date in a small field compatible with the family. In a sparse `J` or `L` ticket, one quiet dedication line can replace an administrative box.
+

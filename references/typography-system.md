@@ -1,58 +1,72 @@
 # Vintage Ticket Typography System
 
-Derived from the bundled ticket corpus and matched to close, verifiable online type families. These are **visual anchors** for image generation: describe the construction, weight, spacing, print wear, and field role as well as the family name. Do not assume an image model can use an installed font merely because it is named.
+Typography is a three-role system, not one “old font.” Choose a complete recipe and describe letter construction, orientation, spacing, field relationship, and wear. Font names are visual anchors only; the image must still look printed and period-specific.
+
+## Contents
+
+- [Role system](#role-system)
+- [Verified visual anchors](#verified-visual-anchors)
+- [Typography recipes](#typography-recipes)
+- [Title fitting](#title-fitting)
+- [Print behaviour](#print-behaviour)
 
 ## Role system
 
-Every ticket must choose three distinct roles:
+1. **Destination/dish title** — the dominant silhouette. It may be formal, hand-painted, outlined, calligraphic, seal-like, or reversed out of a colour field.
+2. **Ticket information** — quieter labels for price, coupon, issuer, holder, date, entry, or directions. It must not be an enlarged copy of the title face.
+3. **Romanization/number** — mechanical, geometric, scientific, typewriter-like, or stamped. It must feel separately typeset.
 
-1. **Destination title**: the largest and most characterful lettering. It may be Song/Ming, Fangsong, black-letter display, or limited brush title lettering.
-2. **Ticket information**: compact, quieter type for `参观券` / `游览券`, issue fields, stub labels, and directions. It must not be an enlarged copy of the title face.
-3. **Pinyin, `NO.`, and serial**: narrow Latin or monospaced/technical print. It should feel mechanically set, overprinted, stamped, or typed—not like body copy.
+Every output must make all three roles visibly different when all three are present. A sparse ticket may omit role 2 or 3, but may never use one generic Song face for every visible field.
 
-Never make the three roles visually identical. Keep the verified scenic-area name fully legible even when its printed strokes are worn.
+## Verified visual anchors
 
-## Online font anchors
+| Anchor | Corpus use | Construction to describe |
+|---|---|---|
+| Noto Serif SC / Noto Serif CJK | formal Song/Ming title and compact official text | strong verticals, fine modulated horizontals, small triangular terminals, letterpress softness |
+| Zhuque Fangsong | Republican book-ticket title or narrow information | tall tight proportions, right-lower visual centre, compact counters, sweeping撇捺, visible metal-type flavour |
+| Noto Sans SC / Noto Sans CJK | institutional labels and heavy admin blocks | uniform squared strokes, compact spacing, stable knockout shapes |
+| LXGW WenKai | Kai-like scenic caption and personal-memory line | handwritten but orderly skeleton, open counters, calm human rhythm; never use as every field |
+| ZCOOL XiaoWei | decorative old-display or museum title | small flared terminals, compact literary display, slightly quirky lead-type silhouette |
+| ZCOOL QingKe HuangYou | 1970s–1980s condensed display and band lettering | tall narrow geometric skeleton, blunt corners, strong vertical rhythm |
+| Ma Shan Zheng | short hand-painted scenic title | upright sign-brush pressure changes, dry gaps, legible non-cursive rhythm |
+| Noto Sans Mono / Noto Sans Mono CJK SC | serial, date, pinyin, ticket code | monospaced mechanical construction, imperfect baseline, selective ink loss |
 
-| Corpus cue | Closest online anchor | Use in ticket | Construction to describe to the image model |
-|---|---|---|---|
-| formal Song/Ming lead type | Noto Serif SC / Noto Serif CJK | dignified title, museum/park-style heading, compact supporting text | modulated Song/Ming strokes, fine horizontals, sturdier verticals, restrained triangular terminals, slightly uneven letterpress edges |
-| Republican-era bookish Fangsong | Zhuque Fangsong (朱雀仿宋) | literary scenic title or small information field | tall condensed proportion, tight inner space, gentle brush modulation, relaxed dots and sweeping left/right strokes, lead-type softness |
-| 1960s–1980s block title and administration labels | Noto Sans SC / Noto Sans CJK bold | heavy title band, `副券`, `存根`, boxed administrative labels | squared industrial grotesque forms, heavy even stroke, compact tracking, slightly compressed phototypeset or woodblock character |
-| expressive hand-painted destination sign | Ma Shan Zheng-inspired brush display | **only** a 2–6-character main scenic title; never body or serial | upright brush-script title with changing pressure, dry-brush gaps, sign-painting rhythm; keep every character readable and do not make it cursive chaos |
-| mechanical number/Latin overprint | Noto Sans Mono / Noto Sans Mono CJK SC | `NO.`, serial, date-like code, pinyin divider line | narrow monospaced, ink-stamped or typewriter-like characters, imperfect baseline and selective numeric ink loss |
-
-Use the named anchors as close visual references, not as permission to copy an existing ticket's lettering. Noto CJK offers both Sans and Serif Chinese families and multiple weights; Zhuque Fangsong is a modern open-source Fangsong project based on `南宋` metal type. Source links: <https://github.com/notofonts/noto-cjk>, <https://github.com/notofonts/noto-docs/blob/main/docs/website/use.md>, <https://github.com/TrionesType/zhuque>, <https://fonts.google.com/specimen/Ma+Shan+Zheng>.
+Primary sources: [Noto CJK](https://github.com/notofonts/noto-cjk), [Zhuque Fangsong](https://github.com/TrionesType/zhuque), [LXGW WenKai](https://github.com/lxgw/LxgwWenKai), [ZCOOL XiaoWei](https://fonts.google.com/specimen/ZCOOL+XiaoWei), [ZCOOL QingKe HuangYou](https://fonts.google.com/specimen/ZCOOL+QingKe+HuangYou), and [Ma Shan Zheng](https://fonts.google.com/specimen/Ma+Shan+Zheng).
 
 ## Typography recipes
 
-Select one recipe compatible with the archetype for every new first-pass ticket. Do not repeat the immediately previous recipe, even when the palette or place changes.
-
-| Recipe | Destination title | Ticket information | Pinyin / serial | Best layout behavior |
+| ID | Destination title | Information | Roman/serial | Structural behaviour |
 |---|---|---|---|---|
-| A — dignified Song print | Noto Serif SC-inspired high-contrast Song/Ming, spaced horizontal title | smaller Zhuque Fangsong-inspired vertical labels | fine mono `NO.` and serial | panoramic scenic panel with narrow stub |
-| B — Republican book-ticket | Zhuque Fangsong-inspired title, vertical or slightly tall horizontal setting | small Noto Serif SC-style lead type | thin serif pinyin plus stamped numeric code | central vignette with a vertical title rail |
-| C — block-print excursion | compact Noto Sans SC-inspired heavy title in a banner | tiny Song/Ming labels with thin rules | bold mono serial, occasional boxed digits | silhouette composition or detachable two-panel ticket |
-| D — signboard souvenir | restrained Ma Shan Zheng-inspired scenic title, maximum six Chinese characters | strictly neutral Noto Serif SC-style fields | typewriter-like mono pinyin and `NO.` | asymmetrical map-like layout with generous paper space |
-| E — engraved official pass | narrow Song/Ming title in a framed cartouche | compact Noto Sans SC-style administrative labels | overprinted mono number plus small serif Roman line | formal border, seal panel, and low scenic strip |
-| F — woodcut exhibition ticket | tall condensed black-letter display title, vertical or stacked | Zhuque Fangsong-inspired small print | faint stamped mono number | dense woodcut scene with a tall title rail |
-| G — folk souvenir print | painted shop-sign or rounded hand-lettered title | irregular compact lead-type labels | loose red-rubber serial or tiny Roman line | folk-story picture ticket or decorative coupon pair |
-| H — recreation-era graphic | rounded or squared 1970s display title in a bright colour field | plain compact black type | condensed technical number | modern recreation graphic or coloured state-run ticket |
-| I — ink bookmark | restrained calligraphic title with generous breathing space | delicate narrow Song/Ming or Fangsong | fine value mark and small seal text | landscape bookmark or black-gold ink slip |
+| T01 editorial stencil | custom heavy stencil/wood-sign display with intentional cut gaps | tiny neutral Song/Ming | tall mono vertical number | title shares space with a figure; serial isolated in ruled cell |
+| T02 formal band | centered white Song/Ming or squared sans knockout | tiny condensed neutral labels | geometric uppercase Roman line | title lives inside a dominant colour band with generous top/bottom rules |
+| T03 folk hand-lettered | Kai-like or restrained brush title, uneven baseline | compact Fangsong labels | loose spaced Romanization and rubber number | title may sit inside the drawing; avoid polished digital centring |
+| T04 scientific plate | condensed industrial Chinese label, often vertical | tiny formal specimen words | italic serif Latin name + mono number | multiple scales, strict label-window relationship |
+| T05 coupon ledger | modest Song/Ming destination, sometimes not largest | large bold administrative word in stub | duplicated mono serial/value | obvious contrast between formal main field and blunt coupon field |
+| T06 outlined recreation | thick outlined, shadowed, rounded or squared custom title | plain compact sans | condensed slanted/uppercase Roman | title acts as graphic image; two-colour outline must show registration wear |
+| T07 black calligraphic | expressive but legible brush title, two to six characters per line | tiny formal heading or none | wide geometric Roman footer or small seal | title may occupy 40–70% of the ticket and need not sit at top |
+| T08 reverse knockout | white/cream title knocked out of saturated field | tiny same-colour dark labels outside field | mechanical number in separate pale zone | preserve strong positive/negative contrast; do not outline every glyph |
+| T09 Republican book-ticket | Zhuque-Fangsong-like tall title, horizontal or vertical | small Song/Ming lead type | thin serif Romanization + stamped code | narrow rail, framed cartouche, or literary souvenir strip |
+| T10 seal and banknote | square seal-script/clerical cartouche as main title | plain vertical caption | stamped price and checking mark | guilloche ground, title behaves like an emblem rather than headline |
+| T11 art-deco souvenir | medallion, geometric display, or tall condensed title | delicate narrow Fangsong | geometric bilingual footer | saturated dark card, metallic line, coloured terminal band |
+| T12 minimalist vertical | one huge geometric vertical title or two widely spaced words | tiny price only | optional fine mono | scene remains low and quiet; title column is the main balance mass |
+| T13 museum portrait | small seal/display title above or below portrait | compact serif museum line | widely spaced uppercase museum name | portrait frame and bilingual footer establish hierarchy |
+| T14 route/map label | sturdy compact block title on side rail | many tiny map labels | code, arrows, index figures | no huge centred headline; type follows map topology |
+| T15 playful signboard | irregular painted display or mascot-integrated title | neutral printed price/issuer | condensed bright Latin word | aquarium, zoo, food, or family scene; keep all Chinese readable |
+| T16 no-hero-title | destination set as modest caption, seal, or footer | one small functional field | number/value may be visually strongest | use when image/emblem or calligraphic atmosphere carries identity |
 
-## Execution rules
+## Title fitting
 
-- Choose a typography recipe before drawing the ticket, alongside palette and layout. The choice must alter letterforms, title orientation, spacing, and the hierarchy of small fields—not merely switch the ink color.
-- Rotate title orientation between horizontal, vertical, framed, bannered, and stacked forms when the selected recipe calls for it. Do not use a centered horizontal headline on every ticket.
-- Use brush display only for a short verified Chinese destination title. Use ordinary printed type for all other Chinese fields, pinyin, and numbers.
-- Vary not only the name of the title face but its visual mechanics: title orientation, stroke contrast, width, spacing, colour, baseline, and whether it sits in a band, rail, vignette, or open field. Never solve type variation by recolouring the same Song/Ming layout.
-- Allow imperfect letterpress evidence: slightly dry title strokes, worn terminals, broken rules, faint double-impression, small tracking inconsistencies, and occasional stamp misregistration. Do not add illegible random noise.
-- Keep pinyin accurate. Do not turn Roman letters into fake glyphs, decorative pseudo-type, or unreadable AI text.
-- A user's future first-generation request must receive a recipe automatically. Never ask them to choose a font, palette, or layout.
+- `2–4 Chinese characters`: allow T03, T07, T10, T11, T12, or T15; vertical, seal-like, or large display settings are viable.
+- `5–7 characters`: prefer T01, T02, T06, T08, T09, or a two-line T07; reduce tracking before reducing legibility.
+- `8+ characters`: use a narrow band, stacked two-line title, vertical rail, or split destination/descriptor. Never squeeze it into one giant Song headline.
+- For Roman titles longer than 18 characters, use a narrow uppercase line, split at a natural hyphen/space, or place the Roman line in a footer. Do not let it compete with the Chinese title.
+- Personal name and date stay in information or serial roles. They must never become the destination title.
 
-## Fast visual QA
+## Print behaviour
 
-- Could the title silhouette be mistaken for the title on the immediately prior ticket? If yes, choose another recipe.
-- Are title, information, and serial visibly different systems? If no, rebuild the type hierarchy.
-- Is the title still readable at normal viewing size after ageing? If no, reduce wear before returning.
-- Does the title style match an actual cue in the reference library—Song, Fangsong, block print, signboard brush, engraving, or mechanical numbering—rather than a default AI "vintage Chinese" font? If no, revise.
+- Vary orientation among horizontal, vertical, stacked, side-rail, cartouche, band, image-integrated, and footer settings.
+- Apply dry ink or broken terminals selectively. Keep exact destination, user name, and date legible.
+- Use slightly inconsistent tracking, a faint double impression, baseline wobble, or ink spread only when compatible with the recipe.
+- Do not invent pseudo-Chinese characters as decoration. If the image model cannot render a nonessential small line correctly, omit that line rather than fabricate text.
+- Never default to `bold Song title + small Song information + same Song number`. Run the fast silhouette check: if the title could be swapped with the immediately previous ticket without changing the composition, choose another recipe.
+
