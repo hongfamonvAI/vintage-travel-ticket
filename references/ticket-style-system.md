@@ -38,6 +38,22 @@ Choose zero to five secondary fields. Plausible fields include serial, value, pr
 - An invented decorative value may be typographically plausible only when it is clearly non-factual; do not present it as an official current price.
 - Preserve user names exactly and normalize unambiguous dates to `YYYY.MM.DD`.
 
+## Geographic language selection
+
+Treat language presence as a sampled design axis, not a mandatory footer.
+
+| Region | Default weighting | Allowed secondary language |
+|---|---|---|
+| mainland China | strongly Chinese-only: approximately 80%; pinyin or verified bilingual text approximately 20% combined | pinyin or verified official Roman/local name only when sampled and structurally useful |
+| Hong Kong, Macau, Taiwan, or another Chinese-language region | balance Chinese-only and locally plausible bilingual treatment | verified official local Roman name or established bilingual signage |
+| overseas destination | sample between Chinese-only Chinese-travel ephemera and Chinese plus the verified official local name | official local-language/Roman form, not automatic English translation |
+
+- `chinese-only`: print no pinyin, English, French, or other destination translation. Use serials, values, dates, seals, or route codes for Latin/numeral contrast.
+- `chinese-plus-pinyin`: add accurate pinyin only; do not substitute an English translation.
+- `chinese-plus-local`: add the verified official local-language or Roman-letter destination name.
+- A typography recipe mentioning a Roman footer describes a possible visual role, not a requirement to include English.
+- Never add English to a mainland-Chinese scenic ticket merely because the image model or prompt template expects a bilingual travel design.
+
 ## Authentic oldness
 
 - Age paper and ink together. Use two plausible events from [print-ageing-system.md](print-ageing-system.md).
@@ -54,6 +70,6 @@ Reject and rebuild when any two of these are true:
 - illustration is a clean near-1:1 tracing of the photo;
 - all information uses one type family;
 - “纪念券” or another category phrase appears only to fill space;
+- a mainland-Chinese destination receives English or pinyin despite a `chinese-only` draw;
 - ageing affects the paper but not the printed content;
 - the result reads as a poster, postcard, product label, or menu instead of a ticket.
-

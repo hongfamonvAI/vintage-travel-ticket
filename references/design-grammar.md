@@ -20,14 +20,15 @@ Do not begin with `cream paper + scenic drawing + Song title + right stub`. Begi
 
 1. Classify the source as `landscape`, `architecture`, `city`, `portrait-memory`, `food`, `object/specimen`, or `transport`.
 2. Respect an explicit orientation. Otherwise choose horizontal with probability `0.56` and vertical with probability `0.44`, reflecting the corpus while preserving meaningful variation.
-3. Select one compatible archetype. Run `scripts/sample_ticket_recipe.py` when available; use its result as the internal art direction.
-4. Select a paper-and-palette family compatible with the archetype from [palette-paper-system.md](palette-paper-system.md).
-5. Select one primary illustration language and one supporting mark language from [illustration-system.md](illustration-system.md). The supporting language may appear only in a seal, map, border, inset, or micro-vignette.
-6. Select one typography recipe from [typography-system.md](typography-system.md). Title, information, and number/Roman roles must remain visibly distinct.
-7. Select exactly one information grammar: `title-token`, `value-block`, `coupon-pair`, `functional-label`, `memory-field`, `route-code`, `issuer-strip`, `scientific-label`, or `transport-fare`.
-8. Select two primary ageing events and zero or one subtle secondary event from [print-ageing-system.md](print-ageing-system.md). Apply them only where physically plausible.
-9. Recompose the source into three to seven graphic masses. Use recognition anchors, not its original crop.
-10. Before generation, write a one-line internal signature: `archetype / ratio / paper-palette / illustration / title recipe / grammar / ageing`. Compare it with visible prior outputs.
+3. Determine the destination region as `mainland-cn`, `chinese-region`, or `overseas`.
+4. Select one compatible archetype. Run `scripts/sample_ticket_recipe.py --region <region>` when available; use its result, including `language_mode`, as the internal art direction.
+5. Select a paper-and-palette family compatible with the archetype from [palette-paper-system.md](palette-paper-system.md).
+6. Select one primary illustration language and one supporting mark language from [illustration-system.md](illustration-system.md). The supporting language may appear only in a seal, map, border, inset, or micro-vignette.
+7. Select one typography recipe from [typography-system.md](typography-system.md). Title, information, and number/Roman roles must remain visibly distinct. When `language_mode` is `chinese-only`, fulfil the third role with a serial, date, value, seal, or route code—not forced English.
+8. Select exactly one information grammar: `title-token`, `value-block`, `coupon-pair`, `functional-label`, `memory-field`, `route-code`, `issuer-strip`, `scientific-label`, or `transport-fare`.
+9. Select two primary ageing events and zero or one subtle secondary event from [print-ageing-system.md](print-ageing-system.md). Apply them only where physically plausible.
+10. Recompose the source into three to seven graphic masses. Use recognition anchors, not its original crop.
+11. Before generation, write a one-line internal signature: `archetype / ratio / paper-palette / illustration / title recipe / grammar / language mode / ageing`. Compare it with visible prior outputs.
 
 ## Coupling matrix
 
@@ -69,9 +70,8 @@ Write the image prompt in this order so later details do not erase earlier struc
 3. source-derived recognition anchors and required recomposition;
 4. illustration method and abstraction level;
 5. paper, ink count, and exact palette roles;
-6. title, information, and serial typography roles;
-7. exact verified text strings;
+6. title, information, and serial/number typography roles;
+7. sampled language mode and exact verified text strings; explicitly state that no Roman line is allowed for `chinese-only`;
 8. information grammar and which fields are absent;
 9. print wear on paper **and ink**;
 10. negative constraints: no photo, no generic poster, no invented words, no default stub.
-

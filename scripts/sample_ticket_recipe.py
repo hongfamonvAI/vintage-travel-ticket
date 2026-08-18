@@ -169,6 +169,27 @@ AGEING = [
     "handling rub + plate misalignment",
 ]
 
+LANGUAGE_MODES = {
+    # Mainland historical scenic tickets are predominantly Chinese-only.
+    "mainland-cn": [
+        "chinese-only", "chinese-only", "chinese-only", "chinese-only",
+        "chinese-only", "chinese-only", "chinese-only", "chinese-only",
+        "chinese-plus-pinyin", "chinese-plus-local",
+    ],
+    # Hong Kong, Macau, Taiwan, and similar regions plausibly mix both systems.
+    "chinese-region": [
+        "chinese-only", "chinese-only", "chinese-only", "chinese-only", "chinese-only",
+        "chinese-plus-pinyin", "chinese-plus-local", "chinese-plus-local",
+        "chinese-plus-local", "chinese-plus-local",
+    ],
+    # Overseas tickets may be Chinese travel ephemera or include the official local name.
+    "overseas": [
+        "chinese-only", "chinese-only", "chinese-only", "chinese-only",
+        "chinese-plus-local", "chinese-plus-local", "chinese-plus-local",
+        "chinese-plus-local", "chinese-plus-local", "chinese-plus-local",
+    ],
+}
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
@@ -177,6 +198,12 @@ def parse_args() -> argparse.Namespace:
         "--subject",
         choices=["landscape", "architecture", "city", "portrait-memory", "food", "object/specimen", "transport"],
         default="landscape",
+    )
+    parser.add_argument(
+        "--region",
+        choices=["mainland-cn", "chinese-region", "overseas"],
+        default="mainland-cn",
+        help="destination language region; controls whether a Roman/local-name line is sampled",
     )
     parser.add_argument("--avoid", action="append", default=[], help="profile id to exclude; repeatable")
     parser.add_argument("--seed", type=int)
@@ -210,6 +237,7 @@ def main() -> None:
         "illustration": rng.choice(profile["illustrations"]),
         "typography": rng.choice(profile["typography"]),
         "information_grammar": rng.choice(profile["grammars"]),
+        "language_mode": rng.choice(LANGUAGE_MODES[args.region]),
         "ageing": rng.choice(AGEING),
     }
     print(json.dumps(result, ensure_ascii=False, indent=2))
@@ -217,4 +245,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
