@@ -190,6 +190,15 @@ LANGUAGE_MODES = {
     ],
 }
 
+MOOD_PALETTES = {
+    "night": {"P06", "P11", "P12", "P13", "P17"},
+    "dusk": {"P06", "P09", "P12", "P13", "P14", "P17"},
+    "misty": {"P04", "P05", "P09", "P15", "P18"},
+    "lush": {"P01", "P02", "P05", "P08", "P11", "P15", "P18"},
+    "warm": {"P02", "P07", "P10", "P14", "P16", "P17"},
+    "day": {"P01", "P02", "P03", "P04", "P05", "P07", "P08", "P09", "P10", "P14", "P15", "P16", "P18"},
+}
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
@@ -204,6 +213,12 @@ def parse_args() -> argparse.Namespace:
         choices=["mainland-cn", "chinese-region", "overseas"],
         default="mainland-cn",
         help="destination language region; controls whether a Roman/local-name line is sampled",
+    )
+    parser.add_argument(
+        "--mood",
+        choices=["auto", "day", "night", "dusk", "misty", "lush", "warm", "neutral"],
+        default="auto",
+        help="source/place atmosphere; filters out palettes that would invert the visible mood",
     )
     parser.add_argument("--avoid", action="append", default=[], help="profile id to exclude; repeatable")
     parser.add_argument("--seed", type=int)
@@ -221,19 +236,25 @@ def main() -> None:
             continue
         if args.subject not in profile["subjects"]:
             continue
+        if args.mood in MOOD_PALETTES and not set(profile["palettes"]) & MOOD_PALETTES[args.mood]:
+            continue
         choices.extend([profile_id] * profile["weight"])
     if not choices:
         raise SystemExit("No compatible profile. Remove an --avoid value or relax orientation.")
 
     profile_id = rng.choice(choices)
     profile = PROFILES[profile_id]
+    palette_options = profile["palettes"]
+    if args.mood in MOOD_PALETTES:
+        palette_options = [palette for palette in palette_options if palette in MOOD_PALETTES[args.mood]]
     ratio = round(rng.uniform(*profile["ratio"]), 2)
     result = {
         "profile": profile_id,
         "orientation": profile["orientation"],
         "ratio": f"{ratio}:1" if profile["orientation"] == "horizontal" else f"1:{ratio}",
         "layout": profile["layout"],
-        "palette": rng.choice(profile["palettes"]),
+        "mood": args.mood,
+        "palette": rng.choice(palette_options),
         "illustration": rng.choice(profile["illustrations"]),
         "typography": rng.choice(profile["typography"]),
         "information_grammar": rng.choice(profile["grammars"]),

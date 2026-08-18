@@ -23,6 +23,8 @@ Read [design-grammar.md](design-grammar.md) first. Then use [archetype-system.md
 ## Source transformation
 
 - Treat the uploaded photo as semantic evidence only. Retain two to four recognition anchors and rebuild the scene inside the selected archetype.
+- Treat clearly visible time of day, weather, season, signature lighting, and ambient energy as recognition anchors too. Stylisation may simplify them but must not invert them.
+- Write a compact place-character brief before sampling. Use the photo first; use verified destination context only to sharpen relevant traits, not to impose a generic tourist stereotype.
 - Simplify foliage, crowds, stones, food texture, signs, and architectural repetition into large printed masses.
 - Change crop, viewpoint, spatial depth, and object scale when needed. A source-aligned tracing fails even when it has an old-paper filter.
 - Keep a person recognisable through hair, clothing silhouette, pose, and one accessory, but translate them through the selected illustration language.
@@ -71,5 +73,6 @@ Reject and rebuild when any two of these are true:
 - all information uses one type family;
 - “纪念券” or another category phrase appears only to fill space;
 - a mainland-Chinese destination receives English or pinyin despite a `chinese-only` draw;
+- a night, mist, rain, snow, blossom, festival, or other obvious source condition is replaced by a contradictory generic atmosphere;
 - ageing affects the paper but not the printed content;
 - the result reads as a poster, postcard, product label, or menu instead of a ticket.

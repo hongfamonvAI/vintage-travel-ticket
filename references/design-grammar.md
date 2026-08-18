@@ -19,16 +19,19 @@ Do not begin with `cream paper + scenic drawing + Song title + right stub`. Begi
 ## Recipe sequence
 
 1. Classify the source as `landscape`, `architecture`, `city`, `portrait-memory`, `food`, `object/specimen`, or `transport`.
-2. Respect an explicit orientation. Otherwise choose horizontal with probability `0.56` and vertical with probability `0.44`, reflecting the corpus while preserving meaningful variation.
-3. Determine the destination region as `mainland-cn`, `chinese-region`, or `overseas`.
-4. Select one compatible archetype. Run `scripts/sample_ticket_recipe.py --region <region>` when available; use its result, including `language_mode`, as the internal art direction.
-5. Select a paper-and-palette family compatible with the archetype from [palette-paper-system.md](palette-paper-system.md).
-6. Select one primary illustration language and one supporting mark language from [illustration-system.md](illustration-system.md). The supporting language may appear only in a seal, map, border, inset, or micro-vignette.
-7. Select one typography recipe from [typography-system.md](typography-system.md). Title, information, and number/Roman roles must remain visibly distinct. When `language_mode` is `chinese-only`, fulfil the third role with a serial, date, value, seal, or route code—not forced English.
-8. Select exactly one information grammar: `title-token`, `value-block`, `coupon-pair`, `functional-label`, `memory-field`, `route-code`, `issuer-strip`, `scientific-label`, or `transport-fare`.
-9. Select two primary ageing events and zero or one subtle secondary event from [print-ageing-system.md](print-ageing-system.md). Apply them only where physically plausible.
-10. Recompose the source into three to seven graphic masses. Use recognition anchors, not its original crop.
-11. Before generation, write a one-line internal signature: `archetype / ratio / paper-palette / illustration / title recipe / grammar / language mode / ageing`. Compare it with visible prior outputs.
+2. Write a one-sentence place-character brief with two to four non-negotiable traits. Prioritise clearly visible time of day, weather, season, light behaviour, and social energy; add a verified destination signature only when relevant.
+3. Map that brief to `day`, `night`, `dusk`, `misty`, `lush`, `warm`, or `neutral`. Use `auto` only when the source has no meaningful atmosphere.
+4. Respect an explicit orientation. Otherwise choose horizontal with probability `0.56` and vertical with probability `0.44`, reflecting the corpus while preserving meaningful variation.
+5. Determine the destination region as `mainland-cn`, `chinese-region`, or `overseas`.
+6. Select one compatible archetype. Run `scripts/sample_ticket_recipe.py --region <region> --mood <mood>` when available; use its result, including `language_mode`, as the internal art direction.
+7. Select a paper-and-palette family compatible with both the archetype and the mood from [palette-paper-system.md](palette-paper-system.md).
+8. Select one primary illustration language and one supporting mark language from [illustration-system.md](illustration-system.md). The supporting language may appear only in a seal, map, border, inset, or micro-vignette.
+9. Select one typography recipe from [typography-system.md](typography-system.md). Title, information, and number/Roman roles must remain visibly distinct. When `language_mode` is `chinese-only`, fulfil the third role with a serial, date, value, seal, or route code—not forced English.
+10. Select exactly one information grammar: `title-token`, `value-block`, `coupon-pair`, `functional-label`, `memory-field`, `route-code`, `issuer-strip`, `scientific-label`, or `transport-fare`.
+11. Select two primary ageing events and zero or one subtle secondary event from [print-ageing-system.md](print-ageing-system.md). Apply them only where physically plausible.
+12. Recompose the source into three to seven graphic masses. Use recognition anchors, not its original crop.
+13. Reject and resample the whole bundle if it contradicts the place-character brief. Never repair a daytime/minimal bundle into a night design by adding isolated dark blue accents.
+14. Before generation, write a one-line internal signature: `character brief / mood / archetype / ratio / paper-palette / illustration / title recipe / grammar / language mode / ageing`. Compare it with visible prior outputs.
 
 ## Coupling matrix
 
@@ -65,13 +68,14 @@ Do not begin with `cream paper + scenic drawing + Song title + right stub`. Begi
 
 Write the image prompt in this order so later details do not erase earlier structure:
 
-1. finished ticket and exact ratio;
-2. structural archetype and spatial allocation in percentages;
-3. source-derived recognition anchors and required recomposition;
-4. illustration method and abstraction level;
-5. paper, ink count, and exact palette roles;
-6. title, information, and serial/number typography roles;
-7. sampled language mode and exact verified text strings; explicitly state that no Roman line is allowed for `chinese-only`;
-8. information grammar and which fields are absent;
-9. print wear on paper **and ink**;
-10. negative constraints: no photo, no generic poster, no invented words, no default stub.
+1. place-character brief and the time/weather/light traits that must survive;
+2. finished ticket and exact ratio;
+3. structural archetype and spatial allocation in percentages;
+4. source-derived recognition anchors and required recomposition;
+5. illustration method and abstraction level;
+6. paper, ink count, and exact palette roles;
+7. title, information, and serial/number typography roles;
+8. sampled language mode and exact verified text strings; explicitly state that no Roman line is allowed for `chinese-only`;
+9. information grammar and which fields are absent;
+10. print wear on paper **and ink**;
+11. negative constraints: no photo, no generic poster, no invented words, no default stub, and no inversion of source mood.

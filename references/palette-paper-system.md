@@ -46,3 +46,16 @@ Never describe cream stock as brown kraft unless the selected archetype explicit
 - Use knockout white/cream text only on a sufficiently solid field. Do not place white type on pale stock without a band.
 - Do not map source colour literally. A blue sky may become paper, a green mountain may become cobalt line, and skin may stay warm paper with one red contour.
 
+## Mood compatibility
+
+Choose colour freely inside the source's semantic mood; do not choose a palette that reverses it.
+
+- `night`: prefer `P06`, `P11`, `P12`, `P13`, or `P17`. Use saturated/dark fields, paper knockouts, and concentrated warm accents to preserve illuminated buildings, signs, or water reflections.
+- `dusk`: prefer `P06`, `P09`, `P12`, `P13`, `P14`, or `P17`; retain the transition between dark field and remaining light.
+- `misty`: prefer `P04`, `P05`, `P09`, `P15`, or `P18`; use quiet contrast and broad paper atmosphere.
+- `lush`: prefer `P01`, `P02`, `P05`, `P08`, `P11`, `P15`, or `P18`; foliage may be non-naturalistic but must still read as abundant organic mass.
+- `warm`: prefer `P02`, `P07`, `P10`, `P14`, `P16`, or `P17`; useful for food, sun-warmed streets, lanterns, and festive interiors.
+- `day`: use pale, white, tinted, or bright stock compatible with the selected archetype; avoid an unexplained dark-night field.
+- `neutral` or `auto`: use the full palette system only when the source has no meaningful atmospheric cue.
+
+These sets are compatibility filters, not literal colour matching. A night harbour need not be photographic navy, but it must remain luminous and nocturnal.
