@@ -56,6 +56,9 @@ Primary sources: [Noto CJK](https://github.com/notofonts/noto-cjk), [Zhuque Fang
 
 ## Title fitting
 
+- Before fitting or wrapping a Chinese destination title, segment it into inseparable semantic units: established proper names, fixed phrases, geographic qualifiers, and generic category words such as `书店`, `公园`, `景区`, or `博物馆`. Choose line breaks only between those units, never by equal character count alone.
+- Write the intended wrap explicitly in the image prompt and preserve it during revisions. Example: `城市之光书店` must be treated as `城市之光 / 书店`; `城市之 / 光书店` is forbidden because it breaks the established name `城市之光`.
+- If the semantic units do not fit the selected title zone, first reduce tracking or type size, change the number of lines, move the title zone, or resample the layout. Never gain visual balance by breaking a proper name or fixed phrase internally.
 - `2–4 Chinese characters`: allow T03, T07, T10, T11, T12, or T15; vertical, seal-like, or large display settings are viable.
 - `5–7 characters`: prefer T01, T02, T06, T08, T09, or a two-line T07; reduce tracking before reducing legibility.
 - `8+ characters`: use a narrow band, stacked two-line title, vertical rail, or split destination/descriptor. Never squeeze it into one giant Song headline.
