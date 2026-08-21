@@ -48,11 +48,11 @@ Treat language presence as a sampled design axis, not a mandatory footer.
 |---|---|---|
 | mainland China | strongly Chinese-only: approximately 80%; pinyin or verified bilingual text approximately 20% combined | pinyin or verified official Roman/local name only when sampled and structurally useful |
 | Hong Kong, Macau, Taiwan, or another Chinese-language region | balance Chinese-only and locally plausible bilingual treatment | verified official local Roman name or established bilingual signage |
-| overseas destination | sample between Chinese-only Chinese-travel ephemera and Chinese plus the verified official local name | official local-language/Roman form, not automatic English translation |
+| overseas destination | sample between Chinese-only Chinese-travel ephemera and Chinese plus concise verified local-language accents | official local name or brand wording; when relevant, established city, neighbourhood/street, or supplied/verified year; not automatic English translation |
 
 - `chinese-only`: print no pinyin, English, French, or other destination translation. Use serials, values, dates, seals, or route codes for Latin/numeral contrast.
 - `chinese-plus-pinyin`: add accurate pinyin only; do not substitute an English translation.
-- `chinese-plus-local`: add the verified official local-language or Roman-letter destination name.
+- `chinese-plus-local`: for an overseas destination, add one to three concise verified local-language accents. Prefer the official local name or brand wording; optionally add an established city, neighbourhood/street, or supplied/verified year when it improves the ticket structure. Keep these subordinate to the Chinese title and never invent slogans or paragraph copy.
 - A typography recipe mentioning a Roman footer describes a possible visual role, not a requirement to include English.
 - Never add English to a mainland-Chinese scenic ticket merely because the image model or prompt template expects a bilingual travel design.
 
@@ -61,6 +61,15 @@ Treat language presence as a sampled design axis, not a mandatory footer.
 - Age paper and ink together. Use two plausible events from [print-ageing-system.md](print-ageing-system.md).
 - White and saturated tickets may look old through ink loss, fold dirt, stamp ghosts, torn perforations, and sun fade; they do not need beige paper.
 - Keep wear local and directional. A uniform grunge overlay, dark vignette, or kraft-paper cast is not enough.
+
+## Ticket recognisability
+
+Every ticket must pair at least one structural signal with at least one administrative signal.
+
+- Structural: purposeful frame/cut edge, serial cell, stub/perforation, value corner, seal block, footer band, side rail, title cap, route index, or bounded image/information division.
+- Administrative: ticket number, value/price, checking/gate field, punch/stamp evidence, true coupon label, compact issue/code field, or user-supplied holder/date.
+- Sparse and high-chroma designs are not exempt. A broad colour field, long ratio, rounded corners, or aged paper without a mechanical ticket field reads as a poster and must be rebuilt.
+- Do not force a generic category phrase merely to create ticket character; use the selected grammar's number, value, checking, route, holder, or code logic instead.
 
 ## Anti-collapse checks
 
@@ -76,3 +85,4 @@ Reject and rebuild when any two of these are true:
 - a night, mist, rain, snow, blossom, festival, or other obvious source condition is replaced by a contradictory generic atmosphere;
 - ageing affects the paper but not the printed content;
 - the result reads as a poster, postcard, product label, or menu instead of a ticket.
+- the result lacks either a structural ticket signal or an administrative ticket signal.

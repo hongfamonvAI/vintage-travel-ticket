@@ -28,10 +28,11 @@ Do not begin with `cream paper + scenic drawing + Song title + right stub`. Begi
 8. Select one primary illustration language and one supporting mark language from [illustration-system.md](illustration-system.md). The supporting language may appear only in a seal, map, border, inset, or micro-vignette.
 9. Select one typography recipe from [typography-system.md](typography-system.md). Title, information, and number/Roman roles must remain visibly distinct. When `language_mode` is `chinese-only`, fulfil the third role with a serial, date, value, seal, or route code—not forced English.
 10. Select exactly one information grammar: `title-token`, `value-block`, `coupon-pair`, `functional-label`, `memory-field`, `route-code`, `issuer-strip`, `scientific-label`, or `transport-fare`.
-11. Select two primary ageing events and zero or one subtle secondary event from [print-ageing-system.md](print-ageing-system.md). Apply them only where physically plausible.
-12. Recompose the source into three to seven graphic masses. Use recognition anchors, not its original crop.
-13. Reject and resample the whole bundle if it contradicts the place-character brief. Never repair a daytime/minimal bundle into a night design by adding isolated dark blue accents.
-14. Before generation, write a one-line internal signature: `character brief / mood / archetype / ratio / paper-palette / illustration / title recipe / grammar / language mode / ageing`. Compare it with visible prior outputs.
+11. Define a ticket-evidence set with at least one structural signal and one administrative signal. Broad-field, calligraphic, minimal, and title-token designs still need a purposeful frame/rail/band/cell plus a number/value/check/code/holder field; proportion and aged paper alone are insufficient.
+12. Select two primary ageing events and zero or one subtle secondary event from [print-ageing-system.md](print-ageing-system.md). Apply them only where physically plausible.
+13. Recompose the source into three to seven graphic masses. Use recognition anchors, not its original crop.
+14. Reject and resample the whole bundle if it contradicts the place-character brief or reads primarily as a poster, postcard, book cover, product label, or menu. Never repair a daytime/minimal bundle into a night design by adding isolated dark blue accents.
+15. Before generation, write a one-line internal signature: `character brief / mood / archetype / ratio / paper-palette / illustration / title recipe / grammar / language mode / ticket evidence / ageing`. Compare it with visible prior outputs.
 
 ## Coupling matrix
 
@@ -77,5 +78,6 @@ Write the image prompt in this order so later details do not erase earlier struc
 7. title, information, and serial/number typography roles;
 8. sampled language mode and exact verified text strings; explicitly state that no Roman line is allowed for `chinese-only`;
 9. information grammar and which fields are absent;
-10. print wear on paper **and ink**;
-11. negative constraints: no photo, no generic poster, no invented words, no default stub, and no inversion of source mood.
+10. structural and administrative ticket evidence;
+11. print wear on paper **and ink**;
+12. negative constraints: no photo, no generic poster, no invented words, no default stub, and no inversion of source mood.
