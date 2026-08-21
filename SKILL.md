@@ -7,7 +7,7 @@ description: Turn a user-supplied travel, landscape, city-street, personal-memor
 
 Create a single finished travel, city-memory, object, transport, or food ticket that feels like a real mid-to-late 20th-century Chinese printed coupon. The public skill contains a reference-distilled design system rather than the private source images.
 
-Always read [references/design-grammar.md](references/design-grammar.md) and [references/ticket-style-system.md](references/ticket-style-system.md) before generating. Use the selected entries in [references/archetype-system.md](references/archetype-system.md), [references/palette-paper-system.md](references/palette-paper-system.md), [references/illustration-system.md](references/illustration-system.md), [references/typography-system.md](references/typography-system.md), and [references/print-ageing-system.md](references/print-ageing-system.md). Consult [references/corpus-design-index.md](references/corpus-design-index.md) only to diagnose repetition or find a less common precedent. Never reconstruct one index row literally.
+Always read [references/design-grammar.md](references/design-grammar.md), [references/ticket-style-system.md](references/ticket-style-system.md), and [references/visual-reference-routing.md](references/visual-reference-routing.md) before generating. Use the selected entries in [references/archetype-system.md](references/archetype-system.md), [references/palette-paper-system.md](references/palette-paper-system.md), [references/illustration-system.md](references/illustration-system.md), [references/typography-system.md](references/typography-system.md), and [references/print-ageing-system.md](references/print-ageing-system.md). Consult [references/corpus-design-index.md](references/corpus-design-index.md) only to diagnose repetition or find a less common precedent. Never reconstruct one index row literally.
 
 ## Default Generation
 
@@ -33,6 +33,15 @@ Before each new first-pass ticket, write a one-sentence **place-character brief*
 - Use the photo only for semantic anchors: a bamboo ravine can validly appear in cobalt and vermilion, plum and ochre, or jade and scarlet, not only naturalistic greens.
 - Randomize the selection for a new ticket. If a prior ticket is visible in the same conversation, choose a different archetype and change at least **four** of aspect ratio, palette/paper, title position, illustration treatment, ageing profile, information grammar, and typography recipe. Never repeat the immediately previous full combination or title silhouette. In particular, never make a category line such as `城市漫游券`, `海港纪念券`, or `山林游览券` the default information pattern.
 - Fit the verified place or food name into the selected layout by scaling, wrapping, or moving title zones. Do not silently collapse every design into the same top-title-plus-right-stub arrangement, hand-drawn temple picture, or standard `副券 + NO.` pattern.
+
+## Visual Reference Layer
+
+After the recipe sampler returns a profile, run `python3 scripts/select_style_references.py --profile <sampled-profile> --count 2`. Keep its JSON internal.
+
+- In `public-contact-sheet` mode, attach only the one returned low-resolution style sheet and use the returned `reference_ids` to locate the relevant anonymous cells.
+- In `private-enhanced` mode, attach only the returned one or two private images. Do not also attach a contact sheet and do not inspect the rest of the private directory.
+- Treat every routed image as style evidence only. The uploaded user photo remains the sole source of subject identity and scene content.
+- Do not expose, return, publish, package, or describe a private filename or local private path. The private 66-image corpus must remain outside Git history.
 
 ## Subject and Ticket-Type Lexicon
 
@@ -94,6 +103,8 @@ Build exactly one ticket from these layers.
 - Do not choose title line breaks by character count alone. Never split an inseparable proper name or fixed phrase across lines; a visually balanced but semantically wrong wrap is a failed title.
 - Do not sacrifice the source's time of day, weather, seasonal cue, signature lighting, or destination-specific atmosphere for random variation. A different print style is valid; a different place identity is not.
 - Do not place excessive text over the scene or allow the ticket to read as a poster rather than an admission ticket.
+- Do not load the full private corpus or all public contact sheets for one generation. Use only the selector output, with a maximum of two private references or one public sheet.
+- Do not publish, display, return, package, or offer the private reference corpus for download.
 
 ## Second-Round Editing
 
