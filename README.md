@@ -29,11 +29,25 @@ git clone https://github.com/hongfamonvAI/vintage-travel-ticket.git \
 
 原始 66 张参考门票素材为私有资料，**不包含在 Git 历史中**。公开版逐张蒸馏了每张票的比例、版面结构、插画语言、纸张配色、字体角色、票务信息与真实印刷磨损，形成匿名设计索引以及可组合的规则系统。
 
-仓库还包含 8 张低清、去元数据并带有 `STYLE ONLY` 标识的风格索引图。它们只帮助模型理解构图、配色、字体轮廓与印刷磨损，不提供可恢复的原图，也禁止照抄票面文字、标志、印章、票号或具体画面。
+仓库还包含两层可公开视觉参考：8 张低清、去元数据并带有 `STYLE ONLY` 标识的历史风格索引图，以及 12 张经过授权、去元数据和压缩的生成门票案例。前者负责历史票制结构、配色、字体轮廓与印刷磨损；后者只补充“这些规则如何落成一张完整门票”的执行先例。选择器最多返回一张历史索引图和一张生成案例，禁止照抄任何票面文字、标志、印章、票号、人物、地点内容或具体布局。
 
-当前公开系统包含 16 类结构原型、18 套纸张配色、14 种插画语言、16 套字体角色配方和印刷做旧矩阵，并通过随机配方脚本保持各轴之间的时代与工艺一致性。若创作者本人在本机的 `assets/private-reference/` 挂载完整 66 张原图，选择器会自动进入私有增强模式，每次只抽取 1–2 张兼容参考；该目录已被 Git 忽略，不会上传。普通 GitHub 用户则自动使用公开索引图，无须额外配置。
+当前公开系统包含 16 类结构原型、18 套纸张配色、14 种插画语言、16 套字体角色配方和印刷做旧矩阵，并通过随机配方脚本保持各轴之间的时代与工艺一致性。普通 GitHub 用户会自动进入“历史索引图 + 生成案例”的公共混合参考模式，无须额外配置。若创作者本人在本机的 `assets/private-reference/` 挂载完整 66 张原图，选择器会优先进入私有增强模式，每次只抽取 1–2 张兼容参考；该目录已被 Git 忽略，不会上传。
 
-## 效果示例
+## 最新打版案例
+
+以下原照片与生成结果均经过授权并已去除元数据。原照片只用于展示对照，不会进入生图风格参考路由。
+
+### 巴黎 Paris
+
+| 原照片 | 生成门票 |
+| --- | --- |
+| <img src="examples/paris-source.jpg" width="300" alt="Paris source photo"> | <img src="examples/paris-ticket.jpg" width="300" alt="Paris vintage ticket"> |
+
+### 景德镇瓷宫 Porcelain Palace
+
+| 原照片 | 生成门票 |
+| --- | --- |
+| <img src="examples/porcelain-palace-source.jpg" width="300" alt="Porcelain Palace source photo"> | <img src="examples/porcelain-palace-ticket.jpg" width="300" alt="Porcelain Palace vintage ticket"> |
 
 ### 芒通 Menton
 
@@ -41,11 +55,35 @@ git clone https://github.com/hongfamonvAI/vintage-travel-ticket.git \
 | --- | --- |
 | <img src="examples/menton-source.jpg" width="300" alt="Menton source photo"> | <img src="examples/menton-ticket.jpg" width="500" alt="Menton vintage ticket"> |
 
+### 济州岛 Jeju Island
+
+| 原照片 | 生成门票 |
+| --- | --- |
+| <img src="examples/jeju-island-source.jpg" width="300" alt="Jeju Island source photo"> | <img src="examples/jeju-island-ticket.jpg" width="500" alt="Jeju Island vintage ticket"> |
+
+### 青城山宿仙谷 Qingcheng Mountain Suxian Valley
+
+| 原照片 | 生成门票 |
+| --- | --- |
+| <img src="examples/qingcheng-suxiangu-source.jpg" width="300" alt="Qingcheng Suxiangu source photo"> | <img src="examples/qingcheng-suxiangu-ticket.jpg" width="300" alt="Qingcheng Suxiangu vintage ticket"> |
+
+### 西湖 West Lake
+
+| 原照片 | 生成门票 |
+| --- | --- |
+| <img src="examples/west-lake-source.jpg" width="300" alt="West Lake source photo"> | <img src="examples/west-lake-ticket.jpg" width="300" alt="West Lake vintage ticket"> |
+
 ### 罗兰·加洛斯球场 Roland-Garros Stadium
 
 | 原照片 | 生成门票 |
 | --- | --- |
 | <img src="examples/roland-garros-source.jpg" width="300" alt="Roland-Garros source photo"> | <img src="examples/roland-garros-ticket.jpg" width="500" alt="Roland-Garros vintage ticket"> |
+
+### 维多利亚港 Victoria Harbour
+
+| 原照片 | 生成门票 |
+| --- | --- |
+| <img src="examples/victoria-harbour-source.jpg" width="300" alt="Victoria Harbour source photo"> | <img src="examples/victoria-harbour-ticket.jpg" width="500" alt="Victoria Harbour vintage ticket"> |
 
 ### 重庆大厦 Chungking Mansions
 
@@ -77,8 +115,9 @@ git clone https://github.com/hongfamonvAI/vintage-travel-ticket.git \
 .
 ├── SKILL.md                 # 主流程与质量规则
 ├── agents/openai.yaml       # Codex skill 元数据
-├── assets/style-contact-sheets/ # 可公开分发的低清风格索引图
-├── scripts/                 # 设计 DNA 采样、视觉参考路由与索引图构建
+├── assets/style-contact-sheets/ # 可公开分发的低清历史风格索引图
+├── assets/generated-ticket-library/ # 公开生成票参考与家族索引
+├── scripts/                 # 设计采样、视觉路由与公开素材构建
 ├── references/              # 匿名逐图索引与分层设计系统
 └── examples/                # 授权展示的原图与生成效果
 ```

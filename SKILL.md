@@ -39,8 +39,10 @@ Before each new first-pass ticket, write a one-sentence **place-character brief*
 After the recipe sampler returns a profile, run `python3 scripts/select_style_references.py --profile <sampled-profile> --count 2`. Keep its JSON internal.
 
 - In `public-contact-sheet` mode, attach only the one returned low-resolution style sheet and use the returned `reference_ids` to locate the relevant anonymous cells.
+- In `public-hybrid` mode, attach the returned historical style sheet and the one routed public generated-ticket reference. Use the sheet for period structure and print logic, and the generated ticket only as evidence that the grammar can be executed coherently. Never inherit the generated ticket's destination, subject, wording, exact title silhouette, serial, or one-for-one layout.
 - In `private-enhanced` mode, attach only the returned one or two private images. Do not also attach a contact sheet and do not inspect the rest of the private directory.
 - Treat every routed image as style evidence only. The uploaded user photo remains the sole source of subject identity and scene content.
+- The public generated-ticket library contains authorised, metadata-stripped outputs rather than historical source tickets. It may strengthen public GitHub generations, but it must remain a secondary precedent so the system does not recursively collapse into its own prior layouts.
 - Do not expose, return, publish, package, or describe a private filename or local private path. The private 66-image corpus must remain outside Git history.
 
 ## Subject and Ticket-Type Lexicon

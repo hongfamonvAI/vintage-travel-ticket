@@ -1,0 +1,126 @@
+[
+  {
+    "id": "G01",
+    "file": "g01-albuquerque.jpg",
+    "title": "阿尔伯克基",
+    "families": [
+      "A"
+    ],
+    "source_example": "examples/albuquerque-source.jpg",
+    "usage": "Public generated style reference only; do not copy literal content or layout."
+  },
+  {
+    "id": "G02",
+    "file": "g02-paris.jpg",
+    "title": "巴黎",
+    "families": [
+      "M"
+    ],
+    "source_example": "examples/paris-source.jpg",
+    "usage": "Public generated style reference only; do not copy literal content or layout."
+  },
+  {
+    "id": "G03",
+    "file": "g03-porcelain-palace.jpg",
+    "title": "景德镇瓷宫",
+    "families": [
+      "M"
+    ],
+    "source_example": "examples/porcelain-palace-source.jpg",
+    "usage": "Public generated style reference only; do not copy literal content or layout."
+  },
+  {
+    "id": "G04",
+    "file": "g04-xiamen-shapowei.jpg",
+    "title": "厦门沙坡尾",
+    "families": [
+      "C",
+      "H"
+    ],
+    "source_example": "examples/xiamen-shapowei-source.jpg",
+    "usage": "Public generated style reference only; do not copy literal content or layout."
+  },
+  {
+    "id": "G05",
+    "file": "g05-quanzhou.jpg",
+    "title": "泉州",
+    "families": [
+      "B",
+      "H"
+    ],
+    "source_example": "examples/quanzhou-source.jpg",
+    "usage": "Public generated style reference only; do not copy literal content or layout."
+  },
+  {
+    "id": "G06",
+    "file": "g06-jeju-island.jpg",
+    "title": "济州岛",
+    "families": [
+      "L"
+    ],
+    "source_example": "examples/jeju-island-source.jpg",
+    "usage": "Public generated style reference only; do not copy literal content or layout."
+  },
+  {
+    "id": "G07",
+    "file": "g07-victoria-harbour.jpg",
+    "title": "维多利亚港",
+    "families": [
+      "A",
+      "H"
+    ],
+    "source_example": "examples/victoria-harbour-source.jpg",
+    "usage": "Public generated style reference only; do not copy literal content or layout."
+  },
+  {
+    "id": "G08",
+    "file": "g08-roland-garros.jpg",
+    "title": "罗兰·加洛斯球场",
+    "families": [
+      "G"
+    ],
+    "source_example": "examples/roland-garros-source.jpg",
+    "usage": "Public generated style reference only; do not copy literal content or layout."
+  },
+  {
+    "id": "G09",
+    "file": "g09-menton.jpg",
+    "title": "芒通",
+    "families": [
+      "F"
+    ],
+    "source_example": "examples/menton-source.jpg",
+    "usage": "Public generated style reference only; do not copy literal content or layout."
+  },
+  {
+    "id": "G10",
+    "file": "g10-west-lake.jpg",
+    "title": "西湖",
+    "families": [
+      "M"
+    ],
+    "source_example": "examples/west-lake-source.jpg",
+    "usage": "Public generated style reference only; do not copy literal content or layout."
+  },
+  {
+    "id": "G11",
+    "file": "g11-chungking-mansions.jpg",
+    "title": "重庆大厦",
+    "families": [
+      "B",
+      "H"
+    ],
+    "source_example": "examples/chungking-mansions-source.jpg",
+    "usage": "Public generated style reference only; do not copy literal content or layout."
+  },
+  {
+    "id": "G12",
+    "file": "g12-qingcheng-suxiangu.jpg",
+    "title": "青城山宿仙谷",
+    "families": [
+      "P"
+    ],
+    "source_example": "examples/qingcheng-suxiangu-source.jpg",
+    "usage": "Public generated style reference only; do not copy literal content or layout."
+  }
+]
