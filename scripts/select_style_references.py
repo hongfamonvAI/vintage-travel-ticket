@@ -6,14 +6,13 @@ from __future__ import annotations
 import argparse
 import json
 import random
-import re
 from pathlib import Path
 
 
 SUPPORTED = {".jpg", ".jpeg", ".png", ".webp"}
 DEFAULT_PRIVATE = "assets/private-reference"
 DEFAULT_GENERATED = "assets/generated-ticket-library"
-GENERATED_TICKET_NAME = re.compile(r"^g\d{2}-[a-z0-9-]+\.jpg$")
+GENERATED_SHEET_NAME = "generated-ticket-contact-sheet.jpg"
 
 PROFILE_ROUTES = {
     "A": ("01-editorial-band-graphic.jpg", ["R01", "R34"]),
@@ -44,41 +43,16 @@ def private_map(directory: Path) -> dict[str, Path]:
     return {f"R{index:02d}": path for index, path in enumerate(paths, 1)}
 
 
-def generated_map(directory: Path) -> dict[str, list[dict[str, object]]]:
-    index_path = directory / "index.json"
-    if not index_path.is_file():
-        return {}
+def generated_sheet(directory: Path) -> Path | None:
+    """Return only the one managed ticket-only sheet, never README examples."""
+    path = (directory / GENERATED_SHEET_NAME).resolve()
     try:
-        records = json.loads(index_path.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError):
-        return {}
-
-    by_family: dict[str, list[dict[str, object]]] = {}
-    for record in records:
-        if not isinstance(record, dict):
-            continue
-        ref_id = record.get("id")
-        filename = record.get("file")
-        families = record.get("families")
-        if not isinstance(ref_id, str) or not isinstance(filename, str) or not isinstance(families, list):
-            continue
-        # The public execution library is ticket-only.  A strict filename and
-        # containment check prevents README source photos (or arbitrary paths)
-        # from ever becoming generation references through a malformed index.
-        if not GENERATED_TICKET_NAME.fullmatch(filename):
-            continue
-        path = (directory / filename).resolve()
-        try:
-            path.relative_to(directory.resolve())
-        except ValueError:
-            continue
-        if not path.is_file() or path.suffix.lower() not in SUPPORTED:
-            continue
-        clean = {"id": ref_id, "path": path}
-        for family in families:
-            if isinstance(family, str) and family.upper() in PROFILE_ROUTES:
-                by_family.setdefault(family.upper(), []).append(clean)
-    return by_family
+        path.relative_to(directory.resolve())
+    except ValueError:
+        return None
+    if not path.is_file() or path.suffix.lower() not in SUPPORTED:
+        return None
+    return path
 
 
 def main() -> None:
@@ -100,7 +74,7 @@ def main() -> None:
     private_dir = args.private_dir or args.skill_root / DEFAULT_PRIVATE
     private = private_map(private_dir)
     generated_dir = args.generated_dir or args.skill_root / DEFAULT_GENERATED
-    generated = generated_map(generated_dir)
+    public_generated_sheet = generated_sheet(generated_dir)
 
     if private:
         result = {
@@ -108,15 +82,14 @@ def main() -> None:
             "references": [str(private[ref_id]) for ref_id in chosen_ids],
             "reference_ids": chosen_ids,
         }
-    elif family in generated and args.count == 2:
-        chosen_generated = rng.choice(generated[family])
+    elif public_generated_sheet and args.count == 2:
         result = {
             "mode": "public-hybrid",
             "references": [
                 str(args.skill_root / "assets" / "style-contact-sheets" / sheet),
-                str(chosen_generated["path"]),
+                str(public_generated_sheet),
             ],
-            "reference_ids": chosen_ids + [chosen_generated["id"]],
+            "reference_ids": chosen_ids + ["GENERATED-SHEET-01"],
         }
     else:
         result = {

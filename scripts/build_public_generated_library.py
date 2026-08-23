@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the public generated-ticket library and authorised before/after examples.
+"""Build one high-resolution generated-ticket sheet and README examples.
 
 The input directory is a maintainer-owned export folder. Only the explicitly listed
 files are read. Every published image is resized, re-encoded, and stripped of EXIF.
@@ -10,11 +10,13 @@ from __future__ import annotations
 
 import argparse
 import json
-import shutil
 from dataclasses import dataclass
 from pathlib import Path
 
-from PIL import Image, ImageOps
+from PIL import Image, ImageDraw, ImageFont, ImageOps
+
+
+GENERATED_SHEET_NAME = "generated-ticket-contact-sheet.jpg"
 
 
 @dataclass(frozen=True)
@@ -60,6 +62,117 @@ def publish_jpeg(source: Path, output: Path, max_edge: int, quality: int) -> Non
         temporary.replace(output)
 
 
+def font(size: int, bold: bool = False) -> ImageFont.ImageFont:
+    names = (
+        ["/System/Library/Fonts/Supplemental/Arial Bold.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"]
+        if bold
+        else ["/System/Library/Fonts/Supplemental/Arial.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"]
+    )
+    for name in names:
+        if Path(name).exists():
+            return ImageFont.truetype(name, size)
+    return ImageFont.load_default()
+
+
+def ticket_orientation(path: Path) -> str:
+    with Image.open(path) as image:
+        return "horizontal" if image.width >= image.height else "vertical"
+
+
+def make_ticket_tile(source_path: Path, entry: Entry, size: tuple[int, int]) -> Image.Image:
+    tile = Image.new("RGB", size, "#e8e4db")
+    art_box = (size[0] - 44, size[1] - 104)
+    with Image.open(source_path) as opened:
+        source = ImageOps.exif_transpose(opened).convert("RGB")
+        art = ImageOps.contain(source, art_box, method=Image.Resampling.LANCZOS)
+    x = (size[0] - art.width) // 2
+    y = 18 + (art_box[1] - art.height) // 2
+    tile.paste(art, (x, y))
+
+    draw = ImageDraw.Draw(tile)
+    draw.rectangle((0, size[1] - 68, size[0], size[1]), fill="#252724")
+    draw.text((20, size[1] - 55), entry.ref_id, font=font(28, True), fill="#f3eee2")
+    draw.text(
+        (102, size[1] - 55),
+        entry.slug.replace("-", " ").upper(),
+        font=font(28),
+        fill="#f3eee2",
+    )
+    draw.rectangle((0, 0, size[0] - 1, size[1] - 1), outline="#706b61", width=2)
+    return tile
+
+
+def build_generated_sheet(
+    ticket_sources: dict[str, Path], output: Path, quality: int
+) -> None:
+    horizontal = [entry for entry in ENTRIES if ticket_orientation(ticket_sources[entry.ref_id]) == "horizontal"]
+    vertical = [entry for entry in ENTRIES if ticket_orientation(ticket_sources[entry.ref_id]) == "vertical"]
+
+    margin = 56
+    gap = 32
+    header = 144
+    section_header = 64
+    footer = 76
+    horizontal_cell = (1450, 620)
+    vertical_cell = (700, 1640)
+    horizontal_columns = 2
+    vertical_columns = 4
+    horizontal_rows = (len(horizontal) + horizontal_columns - 1) // horizontal_columns
+    vertical_rows = (len(vertical) + vertical_columns - 1) // vertical_columns
+    content_width = max(
+        horizontal_columns * horizontal_cell[0] + (horizontal_columns - 1) * gap,
+        vertical_columns * vertical_cell[0] + (vertical_columns - 1) * gap,
+    )
+    horizontal_height = horizontal_rows * horizontal_cell[1] + max(0, horizontal_rows - 1) * gap
+    vertical_height = vertical_rows * vertical_cell[1] + max(0, vertical_rows - 1) * gap
+    width = margin * 2 + content_width
+    height = (
+        header
+        + section_header
+        + horizontal_height
+        + gap * 2
+        + section_header
+        + vertical_height
+        + footer
+    )
+    sheet = Image.new("RGB", (width, height), "#f1eee7")
+    draw = ImageDraw.Draw(sheet)
+    draw.text((margin, 30), "GENERATED VINTAGE TICKET REFERENCE SHEET", font=font(42, True), fill="#252724")
+    draw.text(
+        (margin, 88),
+        "FULL TICKETS · ORIGINAL ASPECT RATIOS · EXECUTION REFERENCE ONLY",
+        font=font(22),
+        fill="#6b655b",
+    )
+
+    y = header
+    draw.text((margin, y + 10), "HORIZONTAL TICKETS", font=font(28, True), fill="#343530")
+    y += section_header
+    for index, entry in enumerate(horizontal):
+        row, column = divmod(index, horizontal_columns)
+        x = margin + column * (horizontal_cell[0] + gap)
+        tile_y = y + row * (horizontal_cell[1] + gap)
+        sheet.paste(make_ticket_tile(ticket_sources[entry.ref_id], entry, horizontal_cell), (x, tile_y))
+
+    y += horizontal_height + gap * 2
+    draw.text((margin, y + 10), "VERTICAL TICKETS", font=font(28, True), fill="#343530")
+    y += section_header
+    for index, entry in enumerate(vertical):
+        row, column = divmod(index, vertical_columns)
+        x = margin + column * (vertical_cell[0] + gap)
+        tile_y = y + row * (vertical_cell[1] + gap)
+        sheet.paste(make_ticket_tile(ticket_sources[entry.ref_id], entry, vertical_cell), (x, tile_y))
+
+    draw.text(
+        (margin, height - footer + 24),
+        "Use as a range reference. Never copy destination text, serials, seals, figures, or one-for-one layouts.",
+        font=font(20),
+        fill="#6b655b",
+    )
+    output.parent.mkdir(parents=True, exist_ok=True)
+    sheet.save(output, "JPEG", quality=quality, optimize=True, progressive=True, exif=b"")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input-dir", type=Path, required=True)
@@ -77,15 +190,15 @@ def main() -> None:
     library_dir.mkdir(parents=True, exist_ok=True)
     examples_dir.mkdir(parents=True, exist_ok=True)
 
-    index: list[dict[str, object]] = []
+    ticket_sources: dict[str, Path] = {}
     for entry in ENTRIES:
         ticket_source = args.input_dir / entry.ticket_name
         if not ticket_source.is_file():
             raise SystemExit(f"Missing generated ticket: {ticket_source}")
+        ticket_sources[entry.ref_id] = ticket_source
 
-        library_output = library_dir / f"{entry.ref_id.lower()}-{entry.slug}.jpg"
-        publish_jpeg(ticket_source, library_output, args.ticket_max_edge, args.quality)
-        shutil.copyfile(library_output, examples_dir / f"{entry.slug}-ticket.jpg")
+        ticket_example = examples_dir / f"{entry.slug}-ticket.jpg"
+        publish_jpeg(ticket_source, ticket_example, args.ticket_max_edge, args.quality)
 
         if entry.source_name:
             source = args.input_dir / entry.source_name
@@ -93,21 +206,31 @@ def main() -> None:
                 raise SystemExit(f"Missing example source: {source}")
             source_output = examples_dir / f"{entry.slug}-source.jpg"
             publish_jpeg(source, source_output, args.source_max_edge, args.quality)
-        index.append(
-            {
-                "id": entry.ref_id,
-                "file": library_output.name,
-                "title": entry.title,
-                "families": list(entry.families),
-                "usage": "Public generated style reference only; do not copy literal content or layout.",
-            }
-        )
+    sheet_output = library_dir / GENERATED_SHEET_NAME
+    build_generated_sheet(ticket_sources, sheet_output, max(args.quality, 90))
 
     (library_dir / "index.json").write_text(
-        json.dumps(index, ensure_ascii=False, indent=2) + "\n",
+        json.dumps(
+            {
+                "id": "GENERATED-SHEET-01",
+                "file": GENERATED_SHEET_NAME,
+                "contains": [
+                    {
+                        "id": entry.ref_id,
+                        "title": entry.title,
+                        "families": list(entry.families),
+                    }
+                    for entry in ENTRIES
+                ],
+                "usage": "High-resolution generated-ticket range reference only; never copy literal content or layout.",
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+        + "\n",
         encoding="utf-8",
     )
-    print(f"Published {len(index)} generated ticket references to {library_dir}")
+    print(f"Published one generated-ticket contact sheet with {len(ENTRIES)} complete tickets to {sheet_output}")
 
 
 if __name__ == "__main__":
