@@ -42,6 +42,7 @@ ENTRIES = (
     Entry("G10", "west-lake", "西湖", "西湖原照片.JPG", "西湖老门票.png", ("M",)),
     Entry("G11", "chungking-mansions", "重庆大厦", "重庆大厦原照片.JPG", "重庆大厦老门票.png", ("B", "H")),
     Entry("G12", "qingcheng-suxiangu", "青城山宿仙谷", "青城山宿仙谷原照片.JPG", "青城山宿仙谷老门票.png", ("P",)),
+    Entry("G13", "xiamen-yubao", "厦门芋包", None, "厦门芋包老门票.png", ("F",)),
 )
 
 

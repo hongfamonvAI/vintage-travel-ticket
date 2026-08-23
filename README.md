@@ -109,6 +109,12 @@ git clone https://github.com/hongfamonvAI/vintage-travel-ticket.git \
 | --- | --- |
 | <img src="examples/quanzhou-source.jpg" width="300" alt="Quanzhou source photo"> | <img src="examples/quanzhou-ticket.jpg" width="500" alt="Quanzhou vintage ticket"> |
 
+### 厦门芋包
+
+仅展示生成门票；原始美食照片不进入仓库或公开风格素材库。
+
+<img src="examples/xiamen-yubao-ticket.jpg" width="700" alt="Xiamen yubao vintage ticket">
+
 ## 目录
 
 ```text
