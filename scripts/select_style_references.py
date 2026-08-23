@@ -6,12 +6,14 @@ from __future__ import annotations
 import argparse
 import json
 import random
+import re
 from pathlib import Path
 
 
 SUPPORTED = {".jpg", ".jpeg", ".png", ".webp"}
 DEFAULT_PRIVATE = "assets/private-reference"
 DEFAULT_GENERATED = "assets/generated-ticket-library"
+GENERATED_TICKET_NAME = re.compile(r"^g\d{2}-[a-z0-9-]+\.jpg$")
 
 PROFILE_ROUTES = {
     "A": ("01-editorial-band-graphic.jpg", ["R01", "R34"]),
@@ -60,7 +62,16 @@ def generated_map(directory: Path) -> dict[str, list[dict[str, object]]]:
         families = record.get("families")
         if not isinstance(ref_id, str) or not isinstance(filename, str) or not isinstance(families, list):
             continue
-        path = directory / filename
+        # The public execution library is ticket-only.  A strict filename and
+        # containment check prevents README source photos (or arbitrary paths)
+        # from ever becoming generation references through a malformed index.
+        if not GENERATED_TICKET_NAME.fullmatch(filename):
+            continue
+        path = (directory / filename).resolve()
+        try:
+            path.relative_to(directory.resolve())
+        except ValueError:
+            continue
         if not path.is_file() or path.suffix.lower() not in SUPPORTED:
             continue
         clean = {"id": ref_id, "path": path}

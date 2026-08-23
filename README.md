@@ -35,7 +35,7 @@ git clone https://github.com/hongfamonvAI/vintage-travel-ticket.git \
 
 ## 最新打版案例
 
-以下原照片与生成结果均经过授权并已去除元数据。原照片只用于展示对照，不会进入生图风格参考路由。
+以下原照片与生成结果均经过授权并已去除元数据。原照片只用于 README 展示对照，不属于素材库。选择器不会读取 `examples/`；`assets/generated-ticket-library/` 只允许收录完成的老门票，并通过 `gNN-*.jpg` 白名单阻止原照片进入生图风格参考路由。
 
 ### 巴黎 Paris
 
@@ -116,10 +116,10 @@ git clone https://github.com/hongfamonvAI/vintage-travel-ticket.git \
 ├── SKILL.md                 # 主流程与质量规则
 ├── agents/openai.yaml       # Codex skill 元数据
 ├── assets/style-contact-sheets/ # 可公开分发的低清历史风格索引图
-├── assets/generated-ticket-library/ # 公开生成票参考与家族索引
+├── assets/generated-ticket-library/ # 仅含公开生成老门票与家族索引
 ├── scripts/                 # 设计采样、视觉路由与公开素材构建
 ├── references/              # 匿名逐图索引与分层设计系统
-└── examples/                # 授权展示的原图与生成效果
+└── examples/                # README 展示对比，不参与生成路由
 ```
 
 示例照片与生成结果仅用于本仓库的展示；请勿将人物照片或参考素材用于未经授权的再发布。

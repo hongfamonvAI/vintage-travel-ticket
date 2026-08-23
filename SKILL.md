@@ -43,6 +43,7 @@ After the recipe sampler returns a profile, run `python3 scripts/select_style_re
 - In `private-enhanced` mode, attach only the returned one or two private images. Do not also attach a contact sheet and do not inspect the rest of the private directory.
 - Treat every routed image as style evidence only. The uploaded user photo remains the sole source of subject identity and scene content.
 - The public generated-ticket library contains authorised, metadata-stripped outputs rather than historical source tickets. It may strengthen public GitHub generations, but it must remain a secondary precedent so the system does not recursively collapse into its own prior layouts.
+- The public generated-ticket library is strictly ticket-only. Never add, index, route, or attach a source photograph there. Files under `examples/` are README display material only and must never be read by the style selector or used as visual style references.
 - Do not expose, return, publish, package, or describe a private filename or local private path. The private 66-image corpus must remain outside Git history.
 
 ## Subject and Ticket-Type Lexicon
@@ -117,6 +118,7 @@ Before prompting, specify a ticket-evidence set. The finished design must contai
 - Do not place excessive text over the scene or allow the ticket to read as a poster rather than an admission ticket.
 - Do not let a large title plus one uninterrupted illustration occupy the design without a separate ticket-evidence set. Long proportion, rounded corners, aged paper, or a decorative border alone do not make a ticket.
 - Do not load the full private corpus or all public contact sheets for one generation. Use only the selector output, with a maximum of two private references or one public sheet.
+- Do not use README comparison photos, user-source examples, or any file named as a source/original photo as style references. Only routed historical sheets, private historical tickets, and finished generated old-ticket images are eligible.
 - Do not publish, display, return, package, or offer the private reference corpus for download.
 - Do not create or return multiple ticket variants, alternative concepts, front-and-back views, before/after comparisons, contact sheets, grids, diptychs, or two tickets on one canvas. One request produces one standalone ticket image unless the user explicitly asks for multiple deliverables.
 

@@ -87,27 +87,18 @@ def main() -> None:
         publish_jpeg(ticket_source, library_output, args.ticket_max_edge, args.quality)
         shutil.copyfile(library_output, examples_dir / f"{entry.slug}-ticket.jpg")
 
-        source_example: str | None = None
         if entry.source_name:
             source = args.input_dir / entry.source_name
             if not source.is_file():
                 raise SystemExit(f"Missing example source: {source}")
             source_output = examples_dir / f"{entry.slug}-source.jpg"
             publish_jpeg(source, source_output, args.source_max_edge, args.quality)
-            source_example = f"examples/{source_output.name}"
-        else:
-            existing_source = examples_dir / f"{entry.slug}-source.jpg"
-            if existing_source.is_file():
-                publish_jpeg(existing_source, existing_source, args.source_max_edge, args.quality)
-                source_example = f"examples/{existing_source.name}"
-
         index.append(
             {
                 "id": entry.ref_id,
                 "file": library_output.name,
                 "title": entry.title,
                 "families": list(entry.families),
-                "source_example": source_example,
                 "usage": "Public generated style reference only; do not copy literal content or layout.",
             }
         )

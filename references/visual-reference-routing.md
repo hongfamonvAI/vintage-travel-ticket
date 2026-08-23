@@ -8,6 +8,8 @@ The skill has two visual-reference layers. They share the same anonymous `R01`â€
 
 `assets/generated-ticket-library/` contains authorised, metadata-stripped tickets generated with this skill. Its `index.json` maps each example to one or more structural families. These are execution precedents, not historical evidence, and must never become the source of destination, subject identity, wording, serials, or exact layout.
 
+This library is strictly ticket-only. Source photographs must never be copied into it, listed in its index, or returned by the selector. `examples/` exists only for human-readable README comparisons; the generation pipeline must never scan, attach, or route any file from that directory. The selector enforces a ticket-only `gNN-*.jpg` filename contract and rejects paths outside the generated-ticket directory.
+
 Use the public layer when no complete private corpus is installed. After sampling a recipe, run:
 
 ```bash
@@ -26,6 +28,7 @@ When this complete local layer exists, the same selector automatically returns o
 ## Separation of roles
 
 - The user's uploaded photo supplies subject identity, place character, time of day, weather, people, food, and other semantic anchors.
+- README source photographs are display-only and are not part of either visual-reference layer.
 - The returned historical reference image or contact sheet supplies only abstract design cues: ticket proportion, structural rhythm, colour relationship, typography silhouette, illustration method, information density, and print-ageing character.
 - A returned public generated ticket supplies only a secondary execution precedent. Change at least four major axes from it whenever the same destination or subject class is requested, and never repeat its full signature.
 - Never copy literal wording, logos, seals, serial numbers, issuer names, exact artwork, or a one-for-one layout from a reference.

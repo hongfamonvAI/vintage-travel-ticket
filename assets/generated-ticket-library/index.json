@@ -6,7 +6,6 @@
     "families": [
       "A"
     ],
-    "source_example": "examples/albuquerque-source.jpg",
     "usage": "Public generated style reference only; do not copy literal content or layout."
   },
   {
@@ -16,7 +15,6 @@
     "families": [
       "M"
     ],
-    "source_example": "examples/paris-source.jpg",
     "usage": "Public generated style reference only; do not copy literal content or layout."
   },
   {
@@ -26,7 +24,6 @@
     "families": [
       "M"
     ],
-    "source_example": "examples/porcelain-palace-source.jpg",
     "usage": "Public generated style reference only; do not copy literal content or layout."
   },
   {
@@ -37,7 +34,6 @@
       "C",
       "H"
     ],
-    "source_example": "examples/xiamen-shapowei-source.jpg",
     "usage": "Public generated style reference only; do not copy literal content or layout."
   },
   {
@@ -48,7 +44,6 @@
       "B",
       "H"
     ],
-    "source_example": "examples/quanzhou-source.jpg",
     "usage": "Public generated style reference only; do not copy literal content or layout."
   },
   {
@@ -58,7 +53,6 @@
     "families": [
       "L"
     ],
-    "source_example": "examples/jeju-island-source.jpg",
     "usage": "Public generated style reference only; do not copy literal content or layout."
   },
   {
@@ -69,7 +63,6 @@
       "A",
       "H"
     ],
-    "source_example": "examples/victoria-harbour-source.jpg",
     "usage": "Public generated style reference only; do not copy literal content or layout."
   },
   {
@@ -79,7 +72,6 @@
     "families": [
       "G"
     ],
-    "source_example": "examples/roland-garros-source.jpg",
     "usage": "Public generated style reference only; do not copy literal content or layout."
   },
   {
@@ -89,7 +81,6 @@
     "families": [
       "F"
     ],
-    "source_example": "examples/menton-source.jpg",
     "usage": "Public generated style reference only; do not copy literal content or layout."
   },
   {
@@ -99,7 +90,6 @@
     "families": [
       "M"
     ],
-    "source_example": "examples/west-lake-source.jpg",
     "usage": "Public generated style reference only; do not copy literal content or layout."
   },
   {
@@ -110,7 +100,6 @@
       "B",
       "H"
     ],
-    "source_example": "examples/chungking-mansions-source.jpg",
     "usage": "Public generated style reference only; do not copy literal content or layout."
   },
   {
@@ -120,7 +109,6 @@
     "families": [
       "P"
     ],
-    "source_example": "examples/qingcheng-suxiangu-source.jpg",
     "usage": "Public generated style reference only; do not copy literal content or layout."
   }
 ]
